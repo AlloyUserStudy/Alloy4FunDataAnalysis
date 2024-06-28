@@ -1,6 +1,6 @@
 # Data for User Study on Submissions for Alloy4Fun
 
-```Classifications of submissions
+##Classifications of submissions
 
  * **correct:** Correct submissions are semantically equivalent to the oracle.
  * **both:** Both submissions allow a combination of over- and underconstrained behavior.
@@ -11,7 +11,7 @@
  * **empty:** Empy submissions are blank.
  * **mod:** Modification submissions change the structure of the base model from the Alloy4Fun exercise.
 
-```Content
+##Content
 
  * `Analysis`: This folders contains all of the Excel sheets analyizing the data as well as the processed data. Subfolders are broken down by research question and span the following:
     * **Model Overviews** This subfolder contains details about the size of the model's in the study as well as all oracles for the models in the study.
