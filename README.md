@@ -10,6 +10,7 @@
  * **type:**  Type errors are formulas that fail to adhere to the typecheck rules.
  * **empty:** Empy submissions are blank.
  * **mod:** Modification submissions change the structure of the base model from the Alloy4Fun exercise.
+ * **theme:** Changes to the visualization style of scenarios. There are no formula edits in theme submissions.
 
 ## Content
 
