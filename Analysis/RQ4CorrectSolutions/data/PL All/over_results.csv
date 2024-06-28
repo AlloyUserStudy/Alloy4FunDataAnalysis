@@ -1,0 +1,70 @@
+
+trainStationNew
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"some Entry
+	some Exit", , ,5,2,1,0,0,
+inv1,"one Entry
+one Exit",24,24.0,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"some Entry
+one Exit",15,15.0,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"some t : Track | t = Entry
+some t : Track | t = Exit",6,6.0,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some (Entry & Junction)
+some (Exit & Junction)",5,5.0,9,4,1,0,0,-4,-2,0,0,0,0.5555555555555556,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"some t: Track | some (t.succs & Exit) and some (succs.t & Entry)",4,4.0,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some Track.succs & Entry and some Track.succs & Exit",3,3.0,13,6,1,0,0,-8,-4,0,0,0,0.38461538461538464,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"some Entry & Exit",2,2.0,4,2,0,0,0,1,0,1,0,0,1.25,0,0,0,0,0,0,1,0,0,0,0,0
+inv1,"some t1,t2 : Track | t1=Entry and t2=Exit",2,2.0,14,3,1,1,0,-9,-1,0,-1,0,0.35714285714285715,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t : Track | t in Entry and t in Exit",2,2.0,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t:Track | t in Entry and t in Exit",2,2.0,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t : Track | t = Entry
+one t : Track | t = Exit",2,2.0,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t1 :Track| one t2: Track | t1 in Entry and t1 not in Exit and t2 in Exit and t2 not in Entry",1,1.0,25,6,1,2,0,-20,-4,0,-2,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t: Track | t in Entry and t in Track
+one t: Track | t in Exit and t in Track",1,1.0,27,6,3,2,0,-22,-4,-2,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one Entry
+one Exit
+Entry != Exit",1,1.0,8,3,1,0,0,-3,-1,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"one t: Track | t in Entry&Exit",1,1.0,11,3,0,1,0,-6,-1,1,-1,0,0.45454545454545453,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some e : Entry | some ex : Exit | all t : Track | e in t and ex in t",1,1.0,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some Entry and one Exit and no Entry & Exit",1,1.0,9,4,1,0,0,-4,-2,0,0,0,0.5555555555555556,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"one t: Track | some (t.succs & Exit) and some (succs.t & Entry)",1,1.0,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some x : Track | x = Entry
+some x : Track | x = Exit",1,1.0,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some disj t1, t2 : Track | t1 = Entry and t2 = Exit",1,1.0,14,3,1,1,0,-9,-1,0,-1,0,0.35714285714285715,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some en:Entry | en->t in succs
+one e:Exit | all t:Track | e->t not in succs",1,1.0,35,8,1,4,0,-30,-6,0,-4,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t: Track | some e: Entry | some x: Exit | e in t.succs && x in t.succs",1,1.0,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t : Track | t = Entry and t = Junction
+some t : Track | t = Exit and t = Junction",1,1.0,27,6,3,2,0,-22,-4,-2,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some e: Entry, ex: Exit | e in Track.succs or ex in Track.succs",1,1.0,21,6,1,1,0,-16,-4,0,-1,0,0.23809523809523808,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"#(Entry) > 1 and #(Exit) > 1",1,1.0,9,4,1,0,0,-4,-2,0,0,0,0.5555555555555556,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"one e:Entry | one ex:Exit | e in Track and ex in Track",1,1.0,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one ex:Exit, e:Entry | e in Track && ex in Track",1,1.0,17,4,1,1,0,-12,-2,0,-1,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t : Track | t = Entry and t != Junction
+some t : Track | t = Exit and t != Junction",1,1.0,27,6,3,2,0,-22,-4,-2,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t1, t2 : Track | t1 = Entry and t2 = Exit
+Track = Junction",1,1.0,18,4,2,1,0,-13,-2,-1,-1,0,0.2777777777777778,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one Exit
+one Entry",1,1.0,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"some e: Entry, f: Exit | e in Track.succs and f in Track.succs",1,1.0,21,6,1,1,0,-16,-4,0,-1,0,0.23809523809523808,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t1, t2: Track | t1 in Entry and t2 in Exit",1,1.0,14,3,1,1,0,-9,-1,0,-1,0,0.35714285714285715,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one e: Entry, ex: Exit | e in Track and ex in Track",1,1.0,17,4,1,1,0,-12,-2,0,-1,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t : Track | t = Entry
+one t : Track | t = Exit",1,1.0,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"#(Entry) = 1 and #(Exit) = 1",1,1.0,9,4,1,0,0,-4,-2,0,0,0,0.5555555555555556,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"some e:Entry | some ex:Exit | some t:Track | e->t in succs and t->ex in succs",1,1.0,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t: Track | t in Entry
+one t: Track | t in Exit",1,1.0,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t : Track | t = Entry
+some t : Track | t = Exit",1,1.0,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one Entry
+some Junction
+one Exit",1,1.0,7,3,1,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"one t:Track | some e:Entry ,ex:Exit | e in t.succs and ex in t.succs",1,1.0,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t: Track | t in Entry&Exit",1,1.0,11,3,0,1,0,-6,-1,1,-1,0,0.45454545454545453,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t:Track | some ex:Exit, e:Entry | e in t.succs and ex in t.succs",1,1.0,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some ex:Exit, e:Entry | e in Track.succs and ex in Track.succs",1,1.0,21,6,1,1,0,-16,-4,0,-1,0,0.23809523809523808,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some en:Entry | some t:Track | one ex:Exit | en->t in succs and t->ex in succs",1,1.0,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+

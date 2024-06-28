@@ -1,0 +1,1146 @@
+
+classroom_fol
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Person in Student", , ,3,1,0,0,0,
+inv1,"all p:Person | p not in Person",1,100.0,9,2,0,1,0,-6,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"no Teacher", , ,2,1,0,0,0,
+inv2,"all x : Person | x not in Person",1,100.0,9,2,0,1,0,-7,-1,0,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"no Student & Teacher", , ,4,2,0,0,0,
+inv3,"all p:Person | p in Teacher and p not in Student or p not in Teacher and p in Student",5,23.809523809523807,21,5,3,1,0,-17,-3,-3,-1,0,0.19047619047619047,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"no Person & Teacher",3,14.285714285714285,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all p : Person | p in Student or p in Teacher
+	all p : Person | p in Student implies p not in Teacher",3,14.285714285714285,27,6,3,2,0,-23,-4,-3,-2,0,0.14814814814814814,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all p : Person | p not in Student and p not in Teacher",2,9.523809523809524,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all p:Person | p in Student iff p not in Teacher",2,9.523809523809524,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all p : Person | p not in Teacher and p not in Student",1,4.761904761904762,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : Person | x in Student implies x not in Teacher
+	Student != Teacher",1,4.761904761904762,17,4,2,1,0,-13,-2,-2,-1,0,0.23529411764705882,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"no Student & Student",1,4.761904761904762,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"Student = Person - Teacher",1,4.761904761904762,5,2,0,0,0,-1,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"Student = Person - Teacher  
+  	Teacher = Person - Student",1,4.761904761904762,11,4,1,0,0,-7,-2,-1,0,0,0.36363636363636365,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"not some p:Person | p in Student && p in Teacher
+	all p:Person | p in Student or p in Teacher",1,4.761904761904762,28,7,3,2,0,-24,-5,-3,-2,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"Person in Student + Teacher", , ,5,2,0,0,0,
+inv4,"all p : Person | p in Student and p in Teacher",2,16.666666666666664,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all p:Person | not (p in Student implies p in Teacher)",2,16.666666666666664,14,4,1,1,0,-9,-2,-1,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all p:Person | not (p not in Student implies p not in Teacher)",1,8.333333333333332,14,4,1,1,0,-9,-2,-1,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all p:Person | p not in Student implies p = Teacher",1,8.333333333333332,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"(Person in Student) iff not (Person in Teacher)",1,8.333333333333332,8,3,1,0,0,-3,-1,-1,0,0,0.625,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all p:Person | not (p in Student implies p not in Teacher)",1,8.333333333333332,14,4,1,1,0,-9,-2,-1,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all p:Person | p != Student implies p = Teacher",1,8.333333333333332,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"(Person in Student) or (Person in Teacher)",1,8.333333333333332,7,2,1,0,0,-2,0,-1,0,0,0.7142857142857143,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all p : Person | p in Student or p in Teacher and inv3
+}
+
+pred inv3{
+  all p : Person | p in Student implies p not in Teacher",1,8.333333333333332,28,6,4,2,0,-23,-4,-4,-2,0,0.17857142857142858,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"no Person",1,8.333333333333332,2,1,0,0,0,3,1,0,0,0,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"some Teacher.Teaches", , ,4,2,0,0,0,
+inv5,"some c:Class, t:Teacher | c->t in Teaches",3,17.647058823529413,15,4,0,1,0,-11,-2,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some x : Class | x in Teacher",2,11.76470588235294,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some c:Class | c in Teacher",2,11.76470588235294,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some t:Teacher | t in Class",2,11.76470588235294,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some Teacher & Class",1,5.88235294117647,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some x : Teacher | x in Class",1,5.88235294117647,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some c:Class | some c.Teaches",1,5.88235294117647,10,3,0,1,0,-6,-1,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some x : Class | x in Group and x in Teacher",1,5.88235294117647,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some t:Person| t in Teacher and t in Class",1,5.88235294117647,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some x : Person | x in Teacher and x in Class",1,5.88235294117647,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some x : Person | x in Teacher and x in Group and x in Class",1,5.88235294117647,16,4,1,1,0,-12,-2,-1,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some Teacher <: Person.Teaches",1,5.88235294117647,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv13_oracle,"Tutors in Teacher -> Student", , ,5,2,0,0,0,
+inv13,"all p: Person | p in Teacher and p.Tutors in Student",2,18.181818181818183,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv13,"all p1, p2 : Person | p1 -> p2 in Tutors implies (p1 in Teacher and 
+      p1 not in Student and p2 in Student and p2 not in Teacher)",2,18.181818181818183,26,7,2,1,0,-21,-5,-2,-1,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+inv13,"no Person.^Tutors",1,9.090909090909092,5,3,0,0,0,0,-1,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"no Person.Tutors",1,9.090909090909092,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all p1, p2 : Person | p1 -> p1 in Tutors and (p1 in Teacher and 
+      p1 not in Student and p2 in Student and p2 not in Teacher)",1,9.090909090909092,25,7,1,1,0,-20,-5,-1,-1,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv13,"all p1, p2 : Person | p1 -> p1 in Tutors and (p1 in Teacher and p2 in Student)",1,9.090909090909092,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv13,"all p1, p2:Person | (isTutored [p1] implies p1 in Student and p1 not in Teacher) and (isTutor [p2] implies p2 in Teacher and p2 not in Student)
+}
+
+pred isTutored (p1:Person){
+	some p2:Person | p2->p1 in Tutors
+}
+
+pred isTutor (p1:Person){
+	some p2:Person | p1->p2 in Tutors",1,9.090909090909092,50,11,7,3,0,-45,-9,-7,-3,0,0.1,0,1,0,0,0,0,0,0,0,0,0,0
+inv13,"no Person.^~Tutors",1,9.090909090909092,6,4,0,0,0,-1,-2,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all p1, p2: Person | p1->p2 in Tutors => (p1 in Teacher and p1 not in Student) and (p2 not in Teacher and p2 in Student)",1,9.090909090909092,26,7,2,1,0,-21,-5,-2,-1,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+
+classroom_rl
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Person in Student", , ,3,1,0,0,0,
+inv1,"all p:Person | p = Student",1,50.0,9,2,0,1,0,-6,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no Person + Student",1,50.0,4,2,0,0,0,-1,-1,0,0,0,0.75,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"no Teacher", , ,2,1,0,0,0,
+
+inv3_oracle,"no Student & Teacher", , ,4,2,0,0,0,
+inv3,"all p:Person | p in Student and p not in Teacher",4,14.814814814814813,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Person = Student + Teacher
+  no Student & Teacher",3,11.11111111111111,10,4,1,0,0,-6,-2,-1,0,0,0.4,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"Person = Student + Teacher
+  no Teacher&Student",3,11.11111111111111,10,4,1,0,0,-6,-2,-1,0,0,0.4,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"Person & Teacher = none",2,7.4074074074074066,5,2,0,0,0,-1,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"no Student & Person",2,7.4074074074074066,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"no Person & Teacher",2,7.4074074074074066,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all p: Person | (p in Student and p not in Teacher) or (p in Teacher and p not in Student)",2,7.4074074074074066,21,5,3,1,0,-17,-3,-3,-1,0,0.19047619047619047,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all p: Person | all t: Teacher | p != t",1,3.7037037037037033,15,3,0,2,0,-11,-1,0,-2,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"no p:Person | p in (Teacher + Student)",1,3.7037037037037033,11,3,0,1,0,-7,-1,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"(Teacher & Student) = 0",1,3.7037037037037033,5,2,0,0,0,-1,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"no p: Person | p in Teacher",1,3.7037037037037033,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"no (Teacher + Student)",1,3.7037037037037033,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all p : Person | p not in Teacher && p not in Student",1,3.7037037037037033,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all p: Person | p not in Student and p in Teacher",1,3.7037037037037033,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"not some p:Person | p in Student or p in Teacher",1,3.7037037037037033,14,4,1,1,0,-10,-2,-1,-1,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all p: Person | no t: Teacher | p = t",1,3.7037037037037033,15,3,0,2,0,-11,-1,0,-2,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"Person in Student + Teacher", , ,5,2,0,0,0,
+inv4,"Person in Teacher or Person in Student",3,20.0,7,2,1,0,0,-2,0,-1,0,0,0.7142857142857143,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"some Student - Teacher & Teacher - Student",2,13.333333333333334,8,4,0,0,0,-3,-2,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"Person in  (Teacher & Student )",1,6.666666666666667,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"no p: Person | all s: Student | all t: Teacher | p != s and p != t",1,6.666666666666667,25,5,1,3,0,-20,-3,-1,-3,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"one Student - Teacher & Teacher - Student",1,6.666666666666667,8,4,0,0,0,-3,-2,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"no (Person-Teacher) and no (Person-Student)",1,6.666666666666667,9,4,1,0,0,-4,-2,-1,0,0,0.5555555555555556,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"Person in Student & Teacher",1,6.666666666666667,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"Person - Teacher = Student",1,6.666666666666667,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"Person in Student",1,6.666666666666667,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"(Person in Student) or (Person in Teacher)",1,6.666666666666667,7,2,1,0,0,-2,0,-1,0,0,0.7142857142857143,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"not some p:Person | p not in Student or p not in Teacher",1,6.666666666666667,14,4,1,1,0,-9,-2,-1,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all p: Person | one s: Student | one t: Teacher | p = s or p = t",1,6.666666666666667,25,5,1,3,0,-20,-3,-1,-3,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"some Teacher.Teaches", , ,4,2,0,0,0,
+inv5,"some Class.Teaches",2,11.76470588235294,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some c:Class | Teacher.Teaches = c",2,11.76470588235294,11,3,0,1,0,-7,-1,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some Class.Teaches & Teacher",1,5.88235294117647,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some Teacher.Groups",1,5.88235294117647,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some Teaches.Teaches",1,5.88235294117647,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some c : Class | some c.Teaches",1,5.88235294117647,10,3,0,1,0,-6,-1,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some Class.Groups.Teacher",1,5.88235294117647,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some c:Class | c in Teacher",1,5.88235294117647,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some t : Teacher | t in Person.(Class.Groups)",1,5.88235294117647,13,4,0,1,0,-9,-2,0,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some c : Class, p : Teacher | (p.Teaches) = c",1,5.88235294117647,15,4,0,1,0,-11,-2,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some t : Teacher | t in Class",1,5.88235294117647,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some Groups.Teacher",1,5.88235294117647,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some Teaches.Person",1,5.88235294117647,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"some t : Class | some t.Teaches",1,5.88235294117647,10,3,0,1,0,-6,-1,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"some Teacher and all t : Teacher | some t.Teaches",1,5.88235294117647,13,4,1,1,0,-9,-2,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv13_oracle,"Tutors in Teacher -> Student", , ,5,2,0,0,0,
+inv13,"no Student.Tutors
+    Person.Tutors in Student
+    no Tutors.Teacher
+    Tutors.Person in Teacher",3,37.5,19,8,1,0,0,-14,-6,-1,0,0,0.2631578947368421,1,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all p : Person | p in Teacher && p.Tutors in Student",2,25.0,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv13,"no ((Person-Teacher).Tutors) and no (Tutors -> (Person-Student))",2,25.0,13,6,1,0,0,-8,-4,-1,0,0,0.38461538461538464,1,0,0,0,0,0,0,0,0,0,0,0
+inv13,"no(Student & Person.Tutors) and (no (Tutors.(Person-Student)))",1,12.5,13,6,1,0,0,-8,-4,-1,0,0,0.38461538461538464,1,0,0,0,0,0,0,0,0,0,0,0
+
+coursesNew
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"enrolled in Student -> Course", , ,5,2,0,0,0,
+inv1,"all p: Person | p in Student",3,14.285714285714285,9,2,0,1,0,-4,0,0,-1,0,0.5555555555555556,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person | p not in Student implies #(enrolled) = 0",2,9.523809523809524,14,4,1,1,0,-9,-2,-1,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person.enrolled | p in Student",2,9.523809523809524,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no (Person.enrolled - Student)",2,9.523809523809524,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all e : Person | all c: Course | c in e.enrolled implies c in Student",1,4.761904761904762,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p2 : Person.enrolled | p2 in Student",1,4.761904761904762,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all x : Course | x in Person",1,4.761904761904762,9,2,0,1,0,-4,0,0,-1,0,0.5555555555555556,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all x: Person | x.enrolled in Student",1,4.761904761904762,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all s : Person | s not in Student implies #(enrolled)=0",1,4.761904761904762,14,4,1,1,0,-9,-2,-1,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person, g : Grade | p->g in Course.grades and p in Student",1,4.761904761904762,21,6,1,1,0,-16,-4,-1,-1,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Person-Student | p.enrolled = 0",1,4.761904761904762,13,4,0,1,0,-8,-2,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person.enrolled | p in Person-Professor",1,4.761904761904762,13,4,0,1,0,-8,-2,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all x: Person | x in Student",1,4.761904761904762,9,2,0,1,0,-4,0,0,-1,0,0.5555555555555556,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person | all p2 : p.enrolled | p2 in Student",1,4.761904761904762,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c: Course | all p: Person | p not in Professor && p in Student",1,4.761904761904762,19,4,1,2,0,-14,-2,-1,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all x : Person, c : Course | x in Student and x.enrolled in c",1,4.761904761904762,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"teaches in Professor -> Course", , ,5,2,0,0,0,
+inv2,"all s : Person | s not in Professor implies (s.teaches)=0",1,50.0,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Student| no s.teaches
+  	all p : Person | some p.teaches implies p in Professor",1,50.0,25,7,2,2,0,-20,-5,-2,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"teaches in Person some -> Course", , ,5,2,0,0,0,
+inv3,"all c:Course | some p:Professor| c in p.teaches",65,40.37267080745342,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some t:Professor | c in t.teaches",9,5.590062111801243,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some p:Professor | p->c in teaches",6,3.7267080745341614,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some p:Professor | p in teaches.c",6,3.7267080745341614,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course in Professor.teaches",4,2.484472049689441,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | c in Professor.teaches",4,2.484472049689441,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some t: Person | t in Professor && c in t.teaches",4,2.484472049689441,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some t : Person-Student | c in t.teaches",3,1.8633540372670807,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course| (some x:Professor| x->c in teaches)",3,1.8633540372670807,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some u:Person|all c:Course|u->c in teaches",3,1.8633540372670807,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some x:Professor|all c:Course| x->c in teaches",2,1.2422360248447204,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some t:Person-Student | x in t.teaches",2,1.2422360248447204,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some p:Professor | p in c.teaches",2,1.2422360248447204,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some y: Person | y in Professor and x in y.teaches",2,1.2422360248447204,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some x.teaches",2,1.2422360248447204,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some p:Professor| all c:Course|p->c in teaches",2,1.2422360248447204,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some p:Person| all c:Course|p->c in teaches and p in Professor",2,1.2422360248447204,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | (some t: Professor | x in t.teaches)",2,1.2422360248447204,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x:Course| one y:Person| y->x in teaches and y in Professor",2,1.2422360248447204,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some x: Professor | c in x.teaches",2,1.2422360248447204,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | (c.teaches != none)",2,1.2422360248447204,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all course : Course | some professor : Professor | professor->course in teaches",2,1.2422360248447204,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x:Course | x in Professor.teaches",2,1.2422360248447204,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all p:Course| some x:Person| x->p in teaches and x in Professor",1,0.6211180124223602,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | one p:Professor | p in teaches.c",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | one x : Professor | c in x.teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Person - Student | c in p.teaches",1,0.6211180124223602,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some t : Professor | t in teaches.c",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some p:Person| all c:Course|p->c in teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some p : Person | all c : Course | c in p.teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some p : Professor | Course in p.teaches",1,0.6211180124223602,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some teaches.c & Professor",1,0.6211180124223602,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c1 : Course | some p1 : Professor | p1->c1 in teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Professor | Course in p.teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : Course | (some p : Professor | x in p.teaches)",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : Course | some y : Professor | y in teaches.x",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | #(teaches.c) = #(c)",1,0.6211180124223602,13,5,0,1,0,-8,-3,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some p: Professor | all c: Course | c in p.teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some p: Professor | p->x in teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : Course | some y : Professor | x in y.teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some u:Person| all c:Course| u in Professor and u->c in teaches",1,0.6211180124223602,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"teaches in Person some -> one Course",1,0.6211180124223602,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | one teaches.c",1,0.6211180124223602,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | #c.teaches > 0",1,0.6211180124223602,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some t:Professor | x in teaches.t",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course = Professor.teaches",1,0.6211180124223602,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c1 : Course | some p1 : Professor | c1 in p1.teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some x:Person|all c:Course| x->c in teaches",1,0.6211180124223602,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Person | p in teaches.c and p in Professor",1,0.6211180124223602,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some Course.teaches",1,0.6211180124223602,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: univ | c in Course implies some t: Professor | t->c in teaches",1,0.6211180124223602,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv10_oracle,"Course.grades.Grade in Student", , ,7,3,0,0,0,
+inv10,"Course.{c : Course, p : Person | some c.grades} in Student",5,26.31578947368421,18,7,0,0,0,-11,-4,0,0,0,0.3888888888888889,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"all p:Person, c:Course | c.grades[p] in Grade implies p in Student",4,21.052631578947366,21,6,1,1,0,-14,-3,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all p : Person | some Course.grades->p implies p in Student",1,5.263157894736842,16,5,1,1,0,-9,-2,-1,-1,0,0.4375,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"no grades",1,5.263157894736842,2,1,0,0,0,5,2,0,0,0,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"all c:Course, p:Person, g:Grade | c->p->g in grades implies p in Student and p in enrolled.c",1,5.263157894736842,31,9,2,1,0,-24,-6,-2,-1,0,0.22580645161290322,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all g : Grade, p : Person - Student | no p->g",1,5.263157894736842,16,5,0,1,0,-9,-2,0,-1,0,0.4375,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all g:Grade | g in Student.enrolled.grades.Person",1,5.263157894736842,15,5,0,1,0,-8,-2,0,-1,0,0.4666666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all p : Person, g : Grade | p->g in {p : Person, g : Grade | some grades.g} implies p in Student",1,5.263157894736842,32,10,1,1,0,-25,-7,-1,-1,0,0.21875,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all c:Course | c.grades[Person] in Student",1,5.263157894736842,13,4,0,1,0,-6,-1,0,-1,0,0.5384615384615384,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all p:Person - Student , c:Course | no p->grades",1,5.263157894736842,16,5,0,1,0,-9,-2,0,-1,0,0.4375,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"{p : Person, g : Grade | some grades.g}.Grade in Student",1,5.263157894736842,18,7,0,0,0,-11,-4,0,0,0,0.3888888888888889,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"no Course.grades",1,5.263157894736842,4,2,0,0,0,3,1,0,0,0,1.75,0,0,0,0,0,0,0,0,0,0,0,0
+
+coursesOld
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"enrolled in Student -> Course", , ,5,2,0,0,0,
+inv1,"all p:Person | p.enrolled in Course => p in Student",17,15.59633027522936,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled.Course=Student",8,7.339449541284404,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Person.enrolled in Student",5,4.587155963302752,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"one p1 : Person | all c : Course | c in grades.p1.Grade",3,2.7522935779816518,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"Course.~enrolled = Student - Professor",3,2.7522935779816518,8,4,0,0,0,-3,-2,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Course.~enrolled = Student",3,2.7522935779816518,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Person | p.enrolled in Course implies p = Student",3,2.7522935779816518,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c: Course | enrolled.c = Student",2,1.834862385321101,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person, c : Course | c not in p.enrolled iff no ( p & Student )",2,1.834862385321101,20,6,1,1,0,-15,-4,-1,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person | no p.enrolled - Student",2,1.834862385321101,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person |p in enrolled.Course iff p in Student",2,1.834862385321101,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"Person.enrolled= Student",2,1.834862385321101,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled in Person some ->  Student",2,1.834862385321101,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person.enrolled | p = Student",2,1.834862385321101,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c: Course | all p: Person | c in p.enrolled implies p=Student",2,1.834862385321101,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person | p in enrolled.Course implies p in Student and p not in Professor",2,1.834862385321101,19,5,2,1,0,-14,-3,-2,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person, c:Course | p  in Student and p->c in enrolled",2,1.834862385321101,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled in Student some -> one Course",2,1.834862385321101,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all c: Course | enrolled.c in Student and enrolled.c not in Professor",2,1.834862385321101,17,5,1,1,0,-12,-3,-1,-1,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c: Course | enrolled.c in Student - Professor",1,0.9174311926605505,13,4,0,1,0,-8,-2,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all course: Course | all person: Person | course in person.enrolled implies (person in Student and person not in Professor)",1,0.9174311926605505,25,6,2,2,0,-20,-4,-2,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person, c:Course | p = Student and p->c in enrolled",1,0.9174311926605505,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled in (Student -> one Course)",1,0.9174311926605505,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person | some p.enrolled iff p in Student and p not in Professor",1,0.9174311926605505,18,5,2,1,0,-13,-3,-2,-1,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person, c:Course | p.enrolled in Student",1,0.9174311926605505,15,4,0,1,0,-10,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all x : Person | x in enrolled.Course <=> x in Student",1,0.9174311926605505,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person, c : Course | c in p.enrolled iff p in Student",1,0.9174311926605505,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Person | all c:Course | p->c in enrolled implies p=Student",1,0.9174311926605505,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c: Course | all p: Person | c in p.enrolled implies p=Student
+	all p: Person | p.enrolled in Course implies p=Student",1,0.9174311926605505,37,9,3,3,0,-32,-7,-3,-3,0,0.13513513513513514,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Person | p.enrolled in Course implies p not in (Person-Student)",1,0.9174311926605505,17,5,1,1,0,-12,-3,-1,-1,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Person  | all c:Course | c not in p.enrolled",1,0.9174311926605505,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c : Course | all p : Person | p->c in enrolled implies p = Student",1,0.9174311926605505,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"Professor.enrolled not in Person.enrolled",1,0.9174311926605505,7,3,0,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person | p.enrolled-((Course.grades.Grade)&Student) = none",1,0.9174311926605505,19,7,0,1,0,-14,-5,0,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"Person.enrolled = Person - Professor",1,0.9174311926605505,7,3,0,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all c : Course | all p : Person | p->c in enrolled iff p = Student",1,0.9174311926605505,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled.Course = Student - Professor",1,0.9174311926605505,7,3,0,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled in (Student -> some Course)",1,0.9174311926605505,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person, c : Course | c in p.enrolled implies p = Student",1,0.9174311926605505,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person | p not in Student => p.enrolled not in Course",1,0.9174311926605505,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Person | enrolled.p in Course implies p in Student",1,0.9174311926605505,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c : Course, p: Person | c in p.enrolled => p = Student",1,0.9174311926605505,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all x: Course, y : Person-Professor | y->x not in enrolled
+  no (Person - Student) & enrolled.Course",1,0.9174311926605505,26,9,1,1,0,-21,-7,-1,-1,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person, c: Course | c in p.enrolled implies c in Student",1,0.9174311926605505,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all c : Course | c.grades.Grade in Student
+   all p : Person | some p.enrolled implies p in Student",1,0.9174311926605505,28,8,2,2,0,-23,-6,-2,-2,0,0.17857142857142858,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"one p1 : Person | all c : Course | c in grades.p1.Person",1,0.9174311926605505,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled = Student -> Course",1,0.9174311926605505,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Professor | no p.enrolled
+	all p: Person | p in Professor or p in Student",1,0.9174311926605505,24,6,2,2,0,-19,-4,-2,-2,0,0.20833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Student&Professor | no p.enrolled
+	all p1: Person-Student | no p1.enrolled",1,0.9174311926605505,25,8,1,2,0,-20,-6,-1,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"not Professor.enrolled in Person.enrolled",1,0.9174311926605505,8,4,0,0,0,-3,-2,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"no Person-Student.enrolled",1,0.9174311926605505,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person | no p.enrolled",1,0.9174311926605505,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled in Student one -> some Course",1,0.9174311926605505,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person | p.enrolled in Student",1,0.9174311926605505,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p : Person | p.enrolled in Course implies (p in Student and p not in Professor)",1,0.9174311926605505,19,5,2,1,0,-14,-3,-2,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person | some enrolled implies p in Student",1,0.9174311926605505,12,3,1,1,0,-7,-1,-1,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"enrolled . Course in Course",1,0.9174311926605505,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all c : Course, p : Person | p.enrolled in Student",1,0.9174311926605505,15,4,0,1,0,-10,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person.enrolled | p in Student",1,0.9174311926605505,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no Person.enrolled - Student",1,0.9174311926605505,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p: Person | p.enrolled-Student = none",1,0.9174311926605505,13,4,0,1,0,-8,-2,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no Person-Student & Course.enrolled",1,0.9174311926605505,8,4,0,0,0,-3,-2,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"teaches in Professor -> Course", , ,5,2,0,0,0,
+inv2,"teaches.Course = Professor",3,14.285714285714285,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no Person-Professor.teaches",3,14.285714285714285,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all p : Person | p ->p in teaches",1,4.761904761904762,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p:Person | some p.teaches iff p in Professor",1,4.761904761904762,14,4,1,1,0,-9,-2,-1,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p : Person | p.teaches in Course implies p = Professor",1,4.761904761904762,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p : Person | no p.teaches - Professor",1,4.761904761904762,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(Person . teaches) in Professor",1,4.761904761904762,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no Person-Professor & teaches.Course",1,4.761904761904762,8,4,0,0,0,-3,-2,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"Course.~teaches = Professor - Student",1,4.761904761904762,8,4,0,0,0,-3,-2,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all p:Person | p.enrolled in Course implies p in Professor",1,4.761904761904762,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p : Person, c : Course | c in p.teaches implies c in Professor",1,4.761904761904762,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"teaches = Professor -> Course",1,4.761904761904762,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no teaches.Course",1,4.761904761904762,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all p : Person | some p.teaches implies p in Professor and p not in Student",1,4.761904761904762,18,5,2,1,0,-13,-3,-2,-1,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p : Person | p.teaches in Professor",1,4.761904761904762,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p : Person | p in p.teaches",1,4.761904761904762,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p:Person | p.teaches in Course implies p in Professor",1,4.761904761904762,15,4,1,1,0,-10,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"teaches in Person some -> Course", , ,5,2,0,0,0,
+inv3,"all c:Course| some p:Professor | p->c in teaches",57,19.322033898305087,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | c in Professor.teaches",35,11.864406779661017,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course|some p:Professor | c in p.teaches",27,9.152542372881356,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"teaches in Professor some->Course",15,5.084745762711865,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"Course in Professor.teaches",14,4.745762711864407,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c1: Course | some p1: Professor | p1->c1 in teaches",11,3.728813559322034,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some p:Professor | p in teaches.c",9,3.050847457627119,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | one teaches.c",8,2.711864406779661,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x:Course | some y:Professor | y->x in teaches",8,2.711864406779661,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Professor.teaches = Course",6,2.0338983050847457,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some p:Professor | c->p in teaches",6,2.0338983050847457,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some t:Professor | t->c in teaches",5,1.694915254237288,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some y: Person | y in Professor and x in y.teaches",4,1.3559322033898304,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some Professor&teaches.c",4,1.3559322033898304,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some c.teaches",3,1.0169491525423728,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some c & (Person - Student).teaches",3,1.0169491525423728,14,5,0,1,0,-9,-3,0,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | one p : Professor | c in p.teaches",2,0.6779661016949152,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course| one p: Professor | p->c in teaches and p->c not in enrolled",2,0.6779661016949152,23,6,1,2,0,-18,-4,-1,-2,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some p: Professor | p -> c in teaches
+  teaches in Professor some -> Course",2,0.6779661016949152,23,6,1,2,0,-18,-4,-1,-2,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : Course | some y : Professor | y->x in teaches
+  	some Professor & teaches.Course",2,0.6779661016949152,24,7,1,2,0,-19,-5,-1,-2,0,0.20833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"teaches.Person = Course",2,0.6779661016949152,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some p:Professor | c in teaches.p",2,0.6779661016949152,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"teaches in Professor one -> set Course",2,0.6779661016949152,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"some p : Professor |all c : Course | c in p.teaches",2,0.6779661016949152,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | one p:Person | p->c in teaches",2,0.6779661016949152,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Person | p->c in teaches and p in Professor",2,0.6779661016949152,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course in teaches.Course",2,0.6779661016949152,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | no univ - c.~teaches",2,0.6779661016949152,13,5,0,1,0,-8,-3,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x:Course | some y : Professor | x in y.teaches",2,0.6779661016949152,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some (c & Professor.teaches)",2,0.6779661016949152,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Professor | p->c in teaches
+  	no Professor.teaches - Course",2,0.6779661016949152,24,7,1,2,0,-19,-5,-1,-2,0,0.20833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course| one p: Professor | p->c in teaches",2,0.6779661016949152,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course = Professor",2,0.6779661016949152,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | not lone c & (Person - Student).teaches",1,0.3389830508474576,15,6,0,1,0,-10,-4,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Person- Student | p in teaches.c",1,0.3389830508474576,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some p: Professor | x->p in teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all course: Course | some professor: Professor | course in professor.teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | c in teaches.Person",1,0.3389830508474576,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"teaches in Professor one -> lone Course",1,0.3389830508474576,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Professor | c in Course implies p->c in teaches",1,0.3389830508474576,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"teaches in Professor some -> some Course",1,0.3389830508474576,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Person- Student | p in c.teaches",1,0.3389830508474576,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Professor | p->c in teaches
+  	Professor.teaches & Course = Course",1,0.3389830508474576,25,7,1,2,0,-20,-5,-1,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all course: Course | course in Professor.teaches",1,0.3389830508474576,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | c in teaches.Professor",1,0.3389830508474576,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Professor | p->c in teaches
+  	no Course - Professor.teaches",1,0.3389830508474576,24,7,1,2,0,-19,-5,-1,-2,0,0.20833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some p: Professor | p in c.teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | not lone p : Professor | p -> c in teaches",1,0.3389830508474576,18,5,0,2,0,-13,-3,0,-2,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some Professor & Course",1,0.3389830508474576,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | one t:Professor | t->c in teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | some p:Person-Student | p->c in teaches",1,0.3389830508474576,19,5,0,2,0,-14,-3,0,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : univ | x in Course implies some y : univ | y in Professor and not y in Student and y->x in teaches",1,0.3389830508474576,29,8,2,2,0,-24,-6,-2,-2,0,0.1724137931034483,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some t: Professor | c in t.teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course in teaches.Person",1,0.3389830508474576,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Student | c in p.teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course| one p: Professor | p->c in teaches
+  
+  all r:Course , x: Professor | x->r not in enrolled",1,0.3389830508474576,33,8,1,3,0,-28,-6,-1,-3,0,0.15151515151515152,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course = teaches.Course",1,0.3389830508474576,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | one c & (Person - Student).teaches",1,0.3389830508474576,14,5,0,1,0,-9,-3,0,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c1 : Course | one p1 : Professor | c1->p1 in teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Professor.teaches&Course = Course",1,0.3389830508474576,7,3,0,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | c in (Person - Student).teaches",1,0.3389830508474576,13,4,0,1,0,-8,-2,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all a : Course | some b : Professor | a in b.teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | one Professor&teaches.c",1,0.3389830508474576,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c1 : Course | one p1 : Professor | p1->c1 in teaches",1,0.3389830508474576,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course in Professor",1,0.3389830508474576,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : univ | x in Course implies some y : univ | y in Professor and not y->x in enrolled and y->x in teaches",1,0.3389830508474576,31,9,2,2,0,-26,-7,-2,-2,0,0.16129032258064516,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : Course | some y : Professor | y->x in teaches
+  	no (Person - Professor) & teaches.Course",1,0.3389830508474576,26,8,1,2,0,-21,-6,-1,-2,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | one p : Professor | some c & p.teaches",1,0.3389830508474576,18,5,0,2,0,-13,-3,0,-2,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x : Course | x in Professor.teaches",1,0.3389830508474576,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | not lone p : Professor | c -> p in teaches",1,0.3389830508474576,18,5,0,2,0,-13,-3,0,-2,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Professor | p->c in teaches
+  	teaches.Course & Course = Course",1,0.3389830508474576,25,7,1,2,0,-20,-5,-1,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"Course = Professor.teaches",1,0.3389830508474576,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"teaches in Person one -> set Course",1,0.3389830508474576,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all c : Course | some p : Professor | p in c.~teaches",1,0.3389830508474576,18,5,0,2,0,-13,-3,0,-2,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | not lone p : Professor | p in teaches.c",1,0.3389830508474576,18,5,0,2,0,-13,-3,0,-2,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c: Course | some (enrolled.c & teaches.c)",1,0.3389830508474576,14,5,0,1,0,-9,-3,0,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all c:Course | one p: Professor | p->c in teaches
+  all c:Course | all p: Professor | p->c not in enrolled",1,0.3389830508474576,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"all x: Course | some y: Person | y in Professor and x in x.teaches",1,0.3389830508474576,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some Course.teaches",1,0.3389830508474576,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv10_oracle,"Course.grades.Grade in Student", , ,7,3,0,0,0,
+inv10,"all p:Person,c:Course,g:Grade | c->p->g in grades and p in Student",1,10.0,25,7,1,1,0,-18,-4,-1,-1,0,0.28,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p in Student",1,10.0,25,7,1,1,0,-18,-4,-1,-1,0,0.28,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all p:Person | some Person <: Course.grades implies p in Student",1,10.0,16,5,1,1,0,-9,-2,-1,-1,0,0.4375,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all c : Course, p : Person | c.grades[p]=Student",1,10.0,17,5,0,1,0,-10,-2,0,-1,0,0.4117647058823529,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all u : univ | u not in Student implies no u.grades.Grade",1,10.0,16,5,1,1,0,-9,-2,-1,-1,0,0.4375,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p not in Professor and p in Student",1,10.0,29,8,2,1,0,-22,-5,-2,-1,0,0.2413793103448276,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all c : Course | Person.(c.grades) in Student",1,10.0,13,4,0,1,0,-6,-1,0,-1,0,0.5384615384615384,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"all u : univ | u not in Student implies no grades.Grade",1,10.0,14,4,1,1,0,-7,-1,-1,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv10,"no Course.grades",1,10.0,4,2,0,0,0,3,1,0,0,0,1.75,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"all c: Course, p: Person | p in  c.grades.Person",1,10.0,17,5,0,1,0,-10,-2,0,-1,0,0.4117647058823529,0,1,0,0,0,0,0,0,0,0,0,0
+
+graphs
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"adj = ~adj", , ,4,2,0,0,0,
+inv1,"no adj",7,10.294117647058822,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | n.adj.adj = n",5,7.352941176470589,13,4,0,1,0,-9,-2,0,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n : Node | no n.adj",3,4.411764705882353,10,3,0,1,0,-6,-1,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n : Node | n not in n.adj.~adj",2,2.941176470588235,14,5,0,1,0,-10,-3,0,-1,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"iden in adj.~adj",2,2.941176470588235,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"no Node",2,2.941176470588235,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all n:Node, n2:n.adj | n in n2",2,2.941176470588235,15,4,0,1,0,-11,-2,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no adj & adj",2,2.941176470588235,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"adj.~adj = iden",2,2.941176470588235,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"iden in ~adj.adj",2,2.941176470588235,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"lone Node",2,2.941176470588235,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"iden in adj.adj",2,2.941176470588235,5,2,0,0,0,-1,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all n1,n2: Node | n1 in n2.adj iff n1.adj in n2",2,2.941176470588235,18,5,1,1,0,-14,-3,-1,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"(Node.adj->adj.Node) in adj",1,1.4705882352941175,9,4,0,0,0,-5,-2,0,0,0,0.4444444444444444,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | one m : Node | n.adj = m implies m.adj = n",1,1.4705882352941175,23,6,1,2,0,-19,-4,-1,-2,0,0.17391304347826086,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n1,n2:Node | n1 in n2.adj && n2 in n1.adj",1,1.4705882352941175,18,5,1,1,0,-14,-3,-1,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"one Node",1,1.4705882352941175,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all disj n1, n2: Node | n2 in n1.adj => n1 in n2.adj
+all n : Node | n in n.adj.adj",1,1.4705882352941175,32,9,2,2,0,-28,-7,-2,-2,0,0.125,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n,m: Node | n.adj.adj = n",1,1.4705882352941175,14,4,0,1,0,-10,-2,0,-1,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | n.adj.adj = n and n.adj != none",1,1.4705882352941175,19,6,1,1,0,-15,-4,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all disj n, n1 : Node | n1 in n.adj && n in n1.adj",1,1.4705882352941175,18,5,1,1,0,-14,-3,-1,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all a,b:Node | b->a in adj",1,1.4705882352941175,12,3,0,1,0,-8,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"~adj.adj in iden and iden in ~adj.adj",1,1.4705882352941175,13,6,1,0,0,-9,-4,-1,0,0,0.3076923076923077,1,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | lone m : Node | n.adj = m implies m.adj = n",1,1.4705882352941175,23,6,1,2,0,-19,-4,-1,-2,0,0.17391304347826086,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n1,n2: Node | n1 in n2.adj and n1 in n2.adj iff n1.adj in n2",1,1.4705882352941175,24,7,2,1,0,-20,-5,-2,-1,0,0.16666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n : Node | some ad : n.adj | n in ad.adj and ad.adj in n",1,1.4705882352941175,25,7,1,2,0,-21,-5,-1,-2,0,0.16,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"iden in adj",1,1.4705882352941175,3,1,0,0,0,1,1,0,0,0,1.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"no adj.~adj",1,1.4705882352941175,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | n.adj in Node implies n.adj.adj = n",1,1.4705882352941175,19,6,1,1,0,-15,-4,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n,m: Node | m in n.adj",1,1.4705882352941175,12,3,0,1,0,-8,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | n.adj = n",1,1.4705882352941175,11,3,0,1,0,-7,-1,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"~adj.adj in iden and iden in adj.~adj",1,1.4705882352941175,13,6,1,0,0,-9,-4,-1,0,0,0.3076923076923077,1,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all disj n1,n2:Node | n1 in n2.adj && n2 in n1.adj",1,1.4705882352941175,18,5,1,1,0,-14,-3,-1,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n,m: Node | n.adj = m",1,1.4705882352941175,12,3,0,1,0,-8,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | no m: Node | n.adj = m implies m.adj = n",1,1.4705882352941175,23,6,1,2,0,-19,-4,-1,-2,0,0.17391304347826086,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no adj
+all n : Node, n2 : n.adj | n in n2.adj",1,1.4705882352941175,20,6,1,1,0,-16,-4,-1,-1,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all disj n,m: Node | n.adj = m",1,1.4705882352941175,12,3,0,1,0,-8,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+no adj & adj",1,1.4705882352941175,23,7,2,1,0,-19,-5,-2,-1,0,0.17391304347826086,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | one m: Node | n.adj = m implies m.adj = m",1,1.4705882352941175,23,6,1,2,0,-19,-4,-1,-2,0,0.17391304347826086,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n1, n2 : Node | n1->n2 in adj",1,1.4705882352941175,12,3,0,1,0,-8,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n:Node, n2:Node | n2 in n.adj => not n2 in n.adj",1,1.4705882352941175,22,7,1,1,0,-18,-5,-1,-1,0,0.18181818181818182,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n : Node | all ad : n.adj | n in ad.adj and ad.adj in n",1,1.4705882352941175,25,7,1,2,0,-21,-5,-1,-2,0,0.16,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | (n.adj->adj.n) = adj",1,1.4705882352941175,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all n: Node | n in adj.(n.adj)
+all disj n1, n2: Node | n2 in n1.adj => n1 in n2.adj",1,1.4705882352941175,32,9,2,2,0,-28,-7,-2,-2,0,0.125,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no adj + adj",1,1.4705882352941175,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all n1,n2: Node | n1 in n2.adj iff n1.adj = n2",1,1.4705882352941175,18,5,1,1,0,-14,-3,-1,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"no adj & ~adj", , ,5,3,0,0,0,
+inv2,"no adj",4,11.76470588235294,2,1,0,0,0,3,2,0,0,0,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no adj + ~adj",4,11.76470588235294,5,3,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no iden & adj.~adj",3,8.823529411764707,7,4,0,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no ~adj",3,8.823529411764707,3,2,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all n : Node | no adj.n",2,5.88235294117647,10,3,0,1,0,-5,0,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"no n : Node, n2 : n.adj | n in n2.adj
+not inv1
+}
+
+pred inv1{
+all n : Node, n2 : n.adj | n in n2.adj",2,5.88235294117647,37,11,2,2,0,-32,-8,-2,-2,0,0.13513513513513514,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all e1 : Node | no Node.adj & adj.Node",1,2.941176470588235,14,5,0,1,0,-9,-2,0,-1,0,0.35714285714285715,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"no (Node.adj & Node.(~adj))",1,2.941176470588235,9,5,0,0,0,-4,-2,0,0,0,0.5555555555555556,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no Node.~adj",1,2.941176470588235,5,3,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all n : Node | no (n.adj & (~adj).n)",1,2.941176470588235,15,6,0,1,0,-10,-3,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all n, m : Node | n->m in adj iff m->n not in adj",1,2.941176470588235,18,5,1,1,0,-13,-2,-1,-1,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all n1,n2:Node | n1 in n2.adj implies n2 not in adj.n1",1,2.941176470588235,18,5,1,1,0,-13,-2,-1,-1,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"no adj . ~adj",1,2.941176470588235,5,3,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"adj & ~adj = iden",1,2.941176470588235,6,3,0,0,0,-1,0,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no adj.adj",1,2.941176470588235,4,2,0,0,0,1,1,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"0 = 1",1,2.941176470588235,3,1,0,0,0,2,2,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all n1,n2: Node | n1 in n2.adj iff n2 not in n1.adj",1,2.941176470588235,18,5,1,1,0,-13,-2,-1,-1,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all n, n1 : Node | n->n1 in adj iff n1->n not in adj",1,2.941176470588235,18,5,1,1,0,-13,-2,-1,-1,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"no adj.~adj & iden",1,2.941176470588235,7,4,0,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no Node.adj",1,2.941176470588235,4,2,0,0,0,1,1,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all n1,n2:Node | n1 in n2.adj <=> n2 in (univ - n1.adj)",1,2.941176470588235,20,6,1,1,0,-15,-3,-1,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all n : Node | no adj:>n",1,2.941176470588235,10,3,0,1,0,-5,0,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"adj = Node -> Node", , ,5,2,0,0,0,
+inv4,"all v : Node | no v.~adj + v",1,14.285714285714285,13,5,0,1,0,-8,-3,0,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"*adj = Node set -> set Node",1,14.285714285714285,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"*adj in Node set -> set Node",1,14.285714285714285,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"iden in adj.~adj",1,14.285714285714285,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"iden in ~adj.adj",1,14.285714285714285,6,3,0,0,0,-1,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all n : Node | n.adj = Node
+
+all n1, n2 : Node | n2 in n1.adj
+
+
+all n : Node | n.adj = Node - n",1,14.285714285714285,37,10,1,3,0,-32,-8,-1,-3,0,0.13513513513513514,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"adj = *adj",1,14.285714285714285,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"no adj & iden", , ,4,2,0,0,0,
+inv5,"all n:Node | n not in n.^adj",14,19.444444444444446,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no iden & ^adj",6,8.333333333333332,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all n:Node | n not in n.*adj",6,8.333333333333332,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no ^adj & iden",6,8.333333333333332,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all x, y : Node | x->y in adj implies not y->x in adj",4,5.555555555555555,19,6,1,1,0,-15,-4,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no n1: Node | n1 in n1.^adj",4,5.555555555555555,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all n : Node | no n.^adj",3,4.166666666666666,11,4,0,1,0,-7,-2,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all n : Node | no n->n",3,4.166666666666666,10,3,0,1,0,-6,-1,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no n1: Node | n1 in n1.*adj",2,2.7777777777777777,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no adj.Node & Node.adj",1,1.3888888888888888,8,4,0,0,0,-4,-2,0,0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"no iden",1,1.3888888888888888,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all a:Node | no a & a.^adj",1,1.3888888888888888,13,5,0,1,0,-9,-3,0,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"adj = ~iden",1,1.3888888888888888,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all n : Node |no n.~adj",1,1.3888888888888888,11,4,0,1,0,-7,-2,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all a:Node | a.next not in a",1,1.3888888888888888,11,3,0,1,0,-7,-1,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no Node->Node & adj",1,1.3888888888888888,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"Node not in Node . *adj",1,1.3888888888888888,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"adj = Node->Node - iden",1,1.3888888888888888,7,3,0,0,0,-3,-1,0,0,0,0.5714285714285714,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all n:Node | n not in ^adj.n",1,1.3888888888888888,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no adj.~adj",1,1.3888888888888888,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"no adj + iden",1,1.3888888888888888,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all x, y, z : Node | x->y in adj implies not y->x in adj",1,1.3888888888888888,20,6,1,1,0,-16,-4,-1,-1,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no adj & ~adj",1,1.3888888888888888,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all n1: Node | not (n1 in n1.^adj)",1,1.3888888888888888,13,5,0,1,0,-9,-3,0,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no ~adj.adj",1,1.3888888888888888,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"no iden & *adj",1,1.3888888888888888,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all n : Node | no n.*adj",1,1.3888888888888888,11,4,0,1,0,-7,-2,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all a:Node | a not in a.^adj",1,1.3888888888888888,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all n1,n2: Node | not ((n2 in n1.adj) and (n1 in n2.^adj))",1,1.3888888888888888,20,7,1,1,0,-16,-5,-1,-1,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all a : Node | no (a.^adj & ^adj.a)",1,1.3888888888888888,16,7,0,1,0,-12,-5,0,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all n: Node | no n.adj",1,1.3888888888888888,10,3,0,1,0,-6,-1,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no iden & Node<:^adj",1,1.3888888888888888,7,4,0,0,0,-3,-2,0,0,0,0.5714285714285714,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all n : Node | no n.(adj.~adj)",1,1.3888888888888888,13,5,0,1,0,-9,-3,0,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"adj = ^adj", , ,4,2,0,0,0,
+inv8,"all n : Node | n.adj.adj = n.adj",3,25.0,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv8,"adj = adj.^adj",3,25.0,6,3,0,0,0,-2,-1,0,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all e1 : Node | e1.*adj in e1.adj",1,8.333333333333332,14,5,0,1,0,-10,-3,0,-1,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv8,"Node->Node.adj.adj in adj",1,8.333333333333332,9,4,0,0,0,-5,-2,0,0,0,0.4444444444444444,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all e1, e3 : Node | e1.*adj in e1.adj",1,8.333333333333332,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv8,"no (adj . adj)",1,8.333333333333332,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"no (^adj + iden)",1,8.333333333333332,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"adj = Node->Node",1,8.333333333333332,5,2,0,0,0,-1,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+
+lts
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv2_oracle,"one Init", , ,2,1,0,0,0,
+
+inv6_oracle,"State.trans.State = Event", , ,7,3,0,0,0,
+inv6,"all e: Event | some State.trans.e",3,14.285714285714285,12,4,0,1,0,-5,-1,0,-1,0,0.5833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event|some s:State | some trans.(e->s)",2,9.523809523809524,18,5,0,2,0,-11,-2,0,-2,0,0.3888888888888889,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event | some e.trans",2,9.523809523809524,10,3,0,1,0,-3,0,0,-1,0,0.7,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"some s : State | Event in s.trans.State",2,9.523809523809524,13,4,0,1,0,-6,-1,0,-1,0,0.5384615384615384,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event | some trans.e",2,9.523809523809524,10,3,0,1,0,-3,0,0,-1,0,0.7,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event | some (State.trans).Event",1,4.761904761904762,12,4,0,1,0,-5,-1,0,-1,0,0.5833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event | some e.~(State.trans)",1,4.761904761904762,13,5,0,1,0,-6,-2,0,-1,0,0.5384615384615384,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event | one s:State | e in ~(Init.trans)[s]",1,4.761904761904762,20,6,0,2,0,-13,-3,0,-2,0,0.35,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event | some e.trans :> State",1,4.761904761904762,12,4,0,1,0,-5,-1,0,-1,0,0.5833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e: Event | some State.(trans.e)",1,4.761904761904762,12,4,0,1,0,-5,-1,0,-1,0,0.5833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e: Event | some (trans.e).State",1,4.761904761904762,12,4,0,1,0,-5,-1,0,-1,0,0.5833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event|some s:(State-Init) | some trans.(e->s)",1,4.761904761904762,20,6,0,2,0,-13,-3,0,-2,0,0.35,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event | some s:State | e in ~(Init.trans)[s]",1,4.761904761904762,20,6,0,2,0,-13,-3,0,-2,0,0.35,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"some s:State |all e:Event| some trans.(e->s)",1,4.761904761904762,18,5,0,2,0,-11,-2,0,-2,0,0.3888888888888889,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all e:Event|some s:State | some trans.(e->s) or one trans.(e->s)",1,4.761904761904762,25,8,1,2,0,-18,-5,-1,-2,0,0.28,0,1,0,0,0,0,0,0,0,0,0,0
+
+productionLine_v2
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Worker = Human + Robot", , ,5,2,0,0,0,
+inv1,"Worker in Human || Worker in Robot",2,13.333333333333334,7,2,1,0,0,-2,0,-1,0,0,0.7142857142857143,1,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Worker in Human",2,13.333333333333334,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Worker in Human & Robot",2,13.333333333333334,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all w:Worker| w in Human",2,13.333333333333334,9,2,0,1,0,-4,0,0,-1,0,0.5555555555555556,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all w: Worker| w in Human and w in Robot",2,13.333333333333334,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all w : Worker | w =  Human or w = Robot",1,6.666666666666667,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all w : Workstation | w in Human or w in Robot",1,6.666666666666667,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all w : univ | w in (Human + Robot)",1,6.666666666666667,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no Worker
+all w1,w2: Worker | w1 != w2 => (w1 in Human and w2 in Robot)",1,6.666666666666667,21,5,3,1,0,-16,-3,-3,-1,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all w:Worker |  w in Human & Robot",1,6.666666666666667,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"workers in Workstation one -> some Worker", , ,5,2,0,0,0,
+inv2,"all ws: Workstation | one w: Worker | w in ws.workers
+all w: Worker | one ws: Workstation | w in ws.workers",4,8.333333333333332,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"lone succ and Workstation in Workstation.(~workers)",2,4.166666666666666,9,4,1,0,0,-4,-2,-1,0,0,0.5555555555555556,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws :  Workstation | some w :  Worker | w->ws in workstation
+all w :  Worker | one ws :  Workstation | w->ws in workstation",2,4.166666666666666,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all w:Workstation | some w.workers
+all w:Worker | one w.workers",2,4.166666666666666,21,6,1,2,0,-16,-4,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(Workstation = workers.Worker) and (Worker = Worker.~workers)",1,2.083333333333333,12,5,1,0,0,-7,-3,-1,0,0,0.4166666666666667,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some w: Worker | w in ws",1,2.083333333333333,15,3,0,2,0,-10,-1,0,-2,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws :  Workstation | some w :  Worker | w->ws in workstation",1,2.083333333333333,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some w1 : Worker | w1->ws in workers
+all w1 : Worker | lone ws : Workstation | w1 -> ws in workers",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(some w : Worker | all ws : Workstation | w in ws.workers) and (all w : Worker | one ws : Workstation | w in ws.workers)",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wb : Workstation | one w : Worker | Worker in wb.workers
+one wb : Workstation | all w : Worker | w in wb.workers",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some w: Worker | w in ws
+all w: Worker | w in Workstation",1,2.083333333333333,25,5,1,3,0,-20,-3,-1,-3,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(Workstation = workers.Workstation)",1,2.083333333333333,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"Worker.^workers = Workstation
+all w : Worker | one ww : Workstation | w in ww.workers",1,2.083333333333333,24,7,1,2,0,-19,-5,-1,-2,0,0.20833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all w: Workstation | some wo: Worker | w->wo in workers
+
+all w: Worker | one work: Workstation | work->w in workstation",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | one w: Worker | w in ws.workers and
+all w: Worker | one ws: Workstation | w in ws.workers",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wb : Workstation | some (wb.workers & Worker)
+all w : Worker | one (w & Workstation.workers)
+all wb1,wb2 : Workstation | all w : Worker | (w in wb1.workers) implies (w not in wb2.workers)",1,2.083333333333333,49,14,2,4,0,-44,-12,-2,-4,0,0.10204081632653061,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws:Workstation | some ws.workers
+all w:Worker | one workers.workers",1,2.083333333333333,21,6,1,2,0,-16,-4,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some ws.workers
+all w: Worker | one w.workstation",1,2.083333333333333,21,6,1,2,0,-16,-4,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some ws.workers
+all w: Worker | one ws: Workstation | w in ws",1,2.083333333333333,26,6,1,3,0,-21,-4,-1,-3,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some ws.workers
+all w: Worker, ws1: Workstation, ws2: Workstation | w in ws1.workers implies w not in ws2.workers",1,2.083333333333333,36,10,2,2,0,-31,-8,-2,-2,0,0.1388888888888889,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"workers in Workstation one -> one Worker",1,2.083333333333333,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"(Workstation = Worker.workers)",1,2.083333333333333,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some w1 : Worker | w1->ws in workers",1,2.083333333333333,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wb : Workstation | some (wb.workers & Worker)
+all w : Worker | (w in Workstation.workers)
+all wb1,wb2 : Workstation | all w : Worker | (w in wb1.workers) implies (w not in wb2.workers)",1,2.083333333333333,48,13,2,4,0,-43,-11,-2,-4,0,0.10416666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(Workstation = workers.Worker) and (Worker = workers.Workstation)",1,2.083333333333333,11,4,1,0,0,-6,-2,-1,0,0,0.45454545454545453,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"lone succ and Workstation in (~workers).Workstation",1,2.083333333333333,9,4,1,0,0,-4,-2,-1,0,0,0.5555555555555556,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | one w: Worker | ws.succ = none and w in ws.workers
+all w: Worker | one ws: Workstation | ws.succ = none and w in ws.workers",1,2.083333333333333,47,12,3,4,0,-42,-10,-3,-4,0,0.10638297872340426,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wk:Workstation | some wk.workers
+all w:Worker | one wk:Workstation | w in wk",1,2.083333333333333,26,6,1,3,0,-21,-4,-1,-3,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some ws.workers
+all w: Worker | one ~workers.w",1,2.083333333333333,22,7,1,2,0,-17,-5,-1,-2,0,0.22727272727272727,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all w : Workstation | w in w.workers",1,2.083333333333333,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(Workstation = workers.Workstation) and (Worker = Worker.~workers)",1,2.083333333333333,12,5,1,0,0,-7,-3,-1,0,0,0.4166666666666667,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some w: Worker | w in ws.workers
+all w: Worker | w in Workstation",1,2.083333333333333,27,6,1,3,0,-22,-4,-1,-3,0,0.18518518518518517,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Workstation | some w : Worker | w in s.workers
+all s : Worker | some w : Workstation | s->w in workers",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"Workstation = Workstation.workers",1,2.083333333333333,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Workstation | some w : Worker | w in s.workers
+all s : Worker | some w : Workstation | s in workers.s",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(all ws : Workstation | some w1 : Worker | w1->ws in workers)
+and
+(all w1 : Worker | one ws : Workstation | w1 -> ws in workers)",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wb : Workstation | some w : Worker | w in wb",1,2.083333333333333,15,3,0,2,0,-10,-1,0,-2,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"(all ws :  Workstation | some w :  Worker | w->ws in workers)
+and
+(all w :  Worker | one ws :  Workstation | w->ws in workers)",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | #ws.workers > 0
+all w: Worker | one ~workers.w",1,2.083333333333333,24,8,1,2,0,-19,-6,-1,-2,0,0.20833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wb : Workstation | Worker in wb.workers
+one wb : Workstation | one w : Worker | w in wb.workers",1,2.083333333333333,29,7,1,3,0,-24,-5,-1,-3,0,0.1724137931034483,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wb : Workstation | one w : Worker | w in wb.workers
+one wb : Workstation | all w : Worker | w in wb.workers",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Workstation | some w : Worker | w in s.workers
+all s : Worker | some w : Workstation | s in workers.w",1,2.083333333333333,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+
+productionLineNew
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Worker = Human + Robot", , ,5,2,0,0,0,
+inv1,"Worker in Human or Worker in Robot",1,16.666666666666664,7,2,1,0,0,-2,0,-1,0,0,0.7142857142857143,1,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Human&Robot not in Worker",1,16.666666666666664,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all w:Worker | w in Robot && w in Human",1,16.666666666666664,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all w : Worker | w in Human and w not in Robot",1,16.666666666666664,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all w : Worker | (w in Human or w in Robot) and no Human & Worker",1,16.666666666666664,18,5,2,1,0,-13,-3,-2,-1,0,0.2777777777777778,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"Human&Robot not in Robot",1,16.666666666666664,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"workers in Workstation one -> some Worker", , ,5,2,0,0,0,
+inv2,"all ws: Workstation | #(ws.workers) > 0
+all w: Worker | #(w.workstation) = 1",3,11.11111111111111,25,8,1,2,0,-20,-6,-1,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some w : Worker | w in ws.workers
+all ws,ws1 : Workstation, w : Worker |w in ws.workers && w in ws1.workers implies w = ws1",2,7.4074074074074066,44,11,3,3,0,-39,-9,-3,-3,0,0.11363636363636363,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all p: Workstation | one p.workers
+all x: Worker | one v: Workstation | x in v.workers",2,7.4074074074074066,28,7,1,3,0,-23,-5,-1,-3,0,0.17857142857142858,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws:Workstation | some ws.workers &&
+all w:Worker | one w.workstation",2,7.4074074074074066,21,6,1,2,0,-16,-4,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some ws.workers
+all w : Worker | one ws : Workstation | w in ws.workstation",1,3.7037037037037033,28,7,1,3,0,-23,-5,-1,-3,0,0.17857142857142858,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Workstation | some w : Worker | s.workers in s && one workers.s",1,3.7037037037037033,22,6,1,2,0,-17,-4,-1,-2,0,0.22727272727272727,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all w : Workstation | some w.workers
+all w : Worker | one w.workers",1,3.7037037037037033,21,6,1,2,0,-16,-4,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all wst : Workstation | some w : Worker | w in wst
+all w : Worker | all wst : Workstation | w in wst",1,3.7037037037037033,31,6,1,4,0,-26,-4,-1,-4,0,0.16129032258064516,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some w : Worker | w in ws.workers
+all ws,ws1 : Workstation, w,w1 : Worker |w in ws.workers && w in ws1.workers implies w = ws1",1,3.7037037037037033,45,11,3,3,0,-40,-9,-3,-3,0,0.1111111111111111,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some w : Worker | w in ws",1,3.7037037037037033,15,3,0,2,0,-10,-1,0,-2,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"some w : Workstation | some w.workers
+all w : Worker | one work : Workstation | w in work.workstation",1,3.7037037037037033,28,7,1,3,0,-23,-5,-1,-3,0,0.17857142857142858,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all w:Workstation | some h:Worker | h in workers.w
+some w:Workstation | all h:Worker |h in workers.w",1,3.7037037037037033,35,8,1,4,0,-30,-6,-1,-4,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some ws.workers
+all w : Worker | one workstation.w",1,3.7037037037037033,21,6,1,2,0,-16,-4,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some ws.workers
+all ws,ws1 : Workstation, w : Worker | w in ws.workers implies w not in ws1.workers",1,3.7037037037037033,33,9,2,2,0,-28,-7,-2,-2,0,0.15151515151515152,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Workstation | #s.workers>0
+all w: Worker | one w.workstation",1,3.7037037037037033,23,7,1,2,0,-18,-5,-1,-2,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Workstation | some w : Worker | w in s.workers && one workers.s",1,3.7037037037037033,22,6,1,2,0,-17,-4,-1,-2,0,0.22727272727272727,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | ws.workers != none && all w: ws.workers | w.workstation = ws",1,3.7037037037037033,25,7,1,2,0,-20,-5,-1,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some w : Worker | w in ws
+all w : Worker | one ws : Workstation | w in ws.workers",1,3.7037037037037033,33,7,1,4,0,-28,-5,-1,-4,0,0.15151515151515152,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"some Workstation.workers && one workstation.Worker",1,3.7037037037037033,9,4,1,0,0,-4,-2,-1,0,0,0.5555555555555556,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws : Workstation | some ws.workers
+all w : Worker | one succ.w",1,3.7037037037037033,21,6,1,2,0,-16,-4,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all ws: Workstation | some (ws.workers)
+all w: Worker | #(w.workstation) = 1",1,3.7037037037037033,23,7,1,2,0,-18,-5,-1,-2,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all w: Worker | #w.^workstation = 1
+all ws: Workstation | #ws.workers > 0",1,3.7037037037037033,26,9,1,2,0,-21,-7,-1,-2,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+
+trainStationOld
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Green", , ,2,1,0,0,0,
+inv1,"all t:Track | t.signal not in Green",3,50.0,11,3,0,1,0,-9,-2,0,-1,0,0.18181818181818182,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"before no Green",1,16.666666666666664,3,1,0,0,1,-1,0,0,0,-1,0.6666666666666666,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"before no (Signal & Green)",1,16.666666666666664,5,2,0,0,1,-3,-1,0,0,-1,0.4,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"no Signal",1,16.666666666666664,2,1,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+trash_fol
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Trash", , ,2,1,0,0,0,
+inv1,"all t: File | no t",2,28.57142857142857,8,2,0,1,0,-6,-1,0,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no File",1,14.285714285714285,2,1,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all w : File | w not in Trash and w in Protected",1,14.285714285714285,13,3,1,1,0,-11,-2,-1,-1,0,0.15384615384615385,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all f:File | f not in Trash and f in Trash",1,14.285714285714285,13,3,1,1,0,-11,-2,-1,-1,0,0.15384615384615385,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"all f:File | some t: Trash | not t in Trash",1,14.285714285714285,16,4,0,2,0,-14,-3,0,-2,0,0.125,0,1,0,0,0,0,0,0,0,0,0,0
+inv1,"no Trash
+all f:File | f in Trash",1,14.285714285714285,12,3,1,1,0,-10,-2,-1,-1,0,0.16666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"File in Trash", , ,3,1,0,0,0,
+inv2,"no File",7,53.84615384615385,2,1,0,0,0,1,0,0,0,0,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all f:File | f not in File",4,30.76923076923077,9,2,0,1,0,-6,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all t : File | t not in Trash and
+Trash' = Trash + t and
+File' = File and
+Protected' = Protected",1,7.6923076923076925,24,6,1,1,3,-21,-5,-1,-1,-3,0.125,0,0,1,0,0,0,0,0,0,0,0,0
+inv2,"all t : File | t not in Trash and
+Trash' = Trash + t
+File' = File
+Protected' = Protected",1,7.6923076923076925,25,6,2,1,3,-22,-5,-2,-1,-3,0.12,0,0,1,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"some Trash", , ,2,1,0,0,0,
+inv3,"some f : File | f = Trash",4,50.0,9,2,0,1,0,-7,-1,0,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some (File-File')",1,12.5,5,2,0,0,1,-3,-1,0,0,-1,0.4,0,0,1,0,0,0,0,0,0,0,0,0
+inv3,"some t : Trash, p : Protected, f : File | t->f in link implies p->f not in link",1,12.5,25,7,1,1,0,-23,-6,-1,-1,0,0.08,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"some (File'-File)",1,12.5,5,2,0,0,1,-3,-1,0,0,-1,0.4,0,0,1,0,0,0,0,0,0,0,0,0
+inv3,"one x : File | x in Trash",1,12.5,9,2,0,1,0,-7,-1,0,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"no Protected & Trash", , ,4,2,0,0,0,
+inv4,"all f:File | f in Protected and f not in Trash",10,50.0,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"no Protected + Trash",4,20.0,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all t: Trash | t = none",1,5.0,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all f : File | f not in Protected and f in Trash",1,5.0,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all f:File | f not in Trash and f not in Protected",1,5.0,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all f : Protected | f not in File",1,5.0,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all f:File | f not in Trash",1,5.0,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all f:File | all t:Trash | f!=t",1,5.0,15,3,0,2,0,-11,-1,0,-2,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"File = Trash + Protected", , ,5,2,0,0,0,
+inv5,"all f:File | f not in Protected and f in Trash",11,39.285714285714285,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all f:File | f in Trash",3,10.714285714285714,9,2,0,1,0,-4,0,0,-1,0,0.5555555555555556,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all p: File | p not in Protected and p in Trash",3,10.714285714285714,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"File - Protected = Trash",2,7.142857142857142,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f:File | f in Trash and f not in Protected",2,7.142857142857142,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all f : univ - Protected | f in Trash",2,7.142857142857142,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all f : univ + Protected | f in Trash",1,3.571428571428571,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all f1:File | f1 not in Protected and f1 in Trash",1,3.571428571428571,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all x : File | x not in Protected and x in Trash",1,3.571428571428571,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"File = Trash",1,3.571428571428571,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f: File | one t : Trash | f in t",1,3.571428571428571,15,3,0,2,0,-10,-1,0,-2,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv6_oracle,"link in File -> lone File", , ,5,2,0,0,0,
+inv6,"lone File.link",5,11.363636363636363,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f:File | one f.link",5,11.363636363636363,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"one File.link",3,6.8181818181818175,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f:File | lone f->link",2,4.545454545454546,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"link in File -> one File",2,4.545454545454546,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all x,y,z : File | (x->y in link and x->z in link) implies x=y",2,4.545454545454546,23,6,2,1,0,-18,-4,-2,-1,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all x,y,z : File | x->y in link implies (all z : File | x->z not in link)",2,4.545454545454546,25,6,1,2,0,-20,-4,-1,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f1, f2, f3 : File | (f1 -> f2 in link and f1 -> f3 in link) implies f1 = f2",2,4.545454545454546,23,6,2,1,0,-18,-4,-2,-1,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f1,f2,f3 : File | f1 -> f3 in link and f2 -> f3 in link implies f2 = f3",2,4.545454545454546,23,6,2,1,0,-18,-4,-2,-1,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"link in File one -> one File",2,4.545454545454546,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f, l, k : File | f->l in link and f->k in link implies f=k",2,4.545454545454546,23,6,2,1,0,-18,-4,-2,-1,0,0.21739130434782608,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f1, f2 : File | f1.link = f2.link implies f1 = f2 and no f1.link & f2.link",1,2.272727272727273,27,9,2,1,0,-22,-7,-2,-1,0,0.18518518518518517,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all x,y : File | x->y in link implies (all z : File | x->z not in link)",1,2.272727272727273,24,6,1,2,0,-19,-4,-1,-2,0,0.20833333333333334,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f1,  f2: File | f1 = f2 implies no f1.link & f2.link",1,2.272727272727273,19,6,1,1,0,-14,-4,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all x,y : File | x->y in link implies (all z : File | z != x and x->z not in link)",1,2.272727272727273,28,7,2,2,0,-23,-5,-2,-2,0,0.17857142857142858,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f1,  f2: File | f1->f2 in link implies no f1.link & f2.link and no f1->f1",1,2.272727272727273,26,9,2,1,0,-21,-7,-2,-1,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f1,  f2: File | f1 != f2 implies no f1.link & f2.link and lone link",1,2.272727272727273,22,7,2,1,0,-17,-5,-2,-1,0,0.22727272727272727,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f:File | lone File.link",1,2.272727272727273,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f,g,h : File | f->g in link implies h->g not in link",1,2.272727272727273,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"lone link",1,2.272727272727273,2,1,0,0,0,3,1,0,0,0,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all x, y, z : File | x -> y in link implies x -> z not in link",1,2.272727272727273,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all x,y : File | x->y in link implies (all z : File | z != y and x->z not in link)",1,2.272727272727273,28,7,2,2,0,-23,-5,-2,-2,0,0.17857142857142858,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"one link",1,2.272727272727273,2,1,0,0,0,3,1,0,0,0,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"link in File some -> one File",1,2.272727272727273,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all x : File, t, u : File | x -> t in link and x -> u in link implies x = u",1,2.272727272727273,26,7,2,1,0,-21,-5,-2,-1,0,0.19230769230769232,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f,g,h : File | f->g in link implies f->h not in link",1,2.272727272727273,19,5,1,1,0,-14,-3,-1,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"no File.link & Trash", , ,6,3,0,0,0,
+inv7,"all f1,f2 : File | f1->f2 in link implies f1 not in Trash and f2 not in Trash",14,21.21212121212121,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all x,y :File | (x->y in link) implies x not in Trash and y not in Trash",10,15.151515151515152,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"(all t,u : File | t->u in link implies t not in Trash and u not in Trash)",6,9.090909090909092,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,g:File | f->g in link implies f not in Trash and g not in Trash",3,4.545454545454546,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all x, y : File | x->y in link and x not in Trash",2,3.0303030303030303,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f:File | f.link not in Trash and f not in Trash",2,3.0303030303030303,15,4,1,1,0,-9,-1,-1,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all x, y : File | x->y in link and x not in Trash and y not in Trash",2,3.0303030303030303,19,5,1,1,0,-13,-2,-1,-1,0,0.3157894736842105,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no link",2,3.0303030303030303,2,1,0,0,0,4,2,0,0,0,3.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all x: File, y: File | x->y in link implies x not in Trash and y not in Trash",2,3.0303030303030303,23,6,2,1,0,-17,-3,-2,-1,0,0.2608695652173913,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f1,f2 : File | f1 not in Trash and f2 not in Trash",1,1.5151515151515151,14,3,1,1,0,-8,0,-1,-1,0,0.42857142857142855,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,l : File | f->l in link and l not in Trash",1,1.5151515151515151,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all x, y : File | x->y in link and y not in Trash",1,1.5151515151515151,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f1 : File | no t: Trash | f1 in t or f1.link in t",1,1.5151515151515151,21,5,1,2,0,-15,-2,-1,-2,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f1 : File | no t: Trash | f1 in t",1,1.5151515151515151,15,3,0,2,0,-9,0,0,-2,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f : File | all lk : File | f->lk in link implies ((f not in Trash) and (lk not in Trash))",1,1.5151515151515151,25,6,2,2,0,-19,-3,-2,-2,0,0.24,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,g:File | f->g not in link",1,1.5151515151515151,12,3,0,1,0,-6,0,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f : File | isLink[f] implies f not in Trash
+}
+
+pred isLink[f:File]{",1,1.5151515151515151,13,2,2,1,0,-7,1,-2,-1,0,0.46153846153846156,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f1, f2:File | f1 -> f2 in link and (f2 not in Trash)",1,1.5151515151515151,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no File.link",1,1.5151515151515151,4,2,0,0,0,2,1,0,0,0,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all f:File | no link.f + Trash",1,1.5151515151515151,12,4,0,1,0,-6,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f1,f2 : File | f1->f2 in link and f1 not in Trash and f2 not in Trash",1,1.5151515151515151,19,5,1,1,0,-13,-2,-1,-1,0,0.3157894736842105,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f:File | isLinked[f] implies f not in Trash
+}
+
+pred isLinked(f:File){
+some f2:File | f->f2 in link implies f2 in Trash",1,1.5151515151515151,27,6,3,2,0,-21,-3,-3,-2,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f: File | f.link not in Trash and no f.link & Trash",1,1.5151515151515151,18,6,1,1,0,-12,-3,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"(all t,u : File | (t in Trash or u in Trash) implies t->u not in link)",1,1.5151515151515151,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all x, y : File | x->y in link and y not in Trash and x not in Trash",1,1.5151515151515151,19,5,1,1,0,-13,-2,-1,-1,0,0.3157894736842105,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f1, f2 : File | (f1->f2 in link or f2->f1 in link) implies (f1 not in Trash and f2 not in Trash)",1,1.5151515151515151,26,7,3,1,0,-20,-4,-3,-1,0,0.23076923076923078,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,g : File | f->g in link and f not in Trash",1,1.5151515151515151,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f:File | isLinked[f] implies f not in Trash
+}
+
+pred isLinked(f:File){
+some f2:File | f->f2 in link or f2->f in link",1,1.5151515151515151,29,7,3,2,0,-23,-4,-3,-2,0,0.20689655172413793,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f1,f2 : File | f1->f2 in link and f1 not in Trash",1,1.5151515151515151,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,lk1 : File | f->lk1 in link implies lk1 not in Trash and f not in Trash",1,1.5151515151515151,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,g : File | f->g in link and g not in Trash",1,1.5151515151515151,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f : File | isLink[f] and f not in Trash
+}
+
+pred isLink[f : File]{
+some g : File | f->g in link",1,1.5151515151515151,23,5,2,2,0,-17,-2,-2,-2,0,0.2608695652173913,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"no link", , ,2,1,0,0,0,
+inv8,"all f:File |f.link not in File",1,100.0,11,3,0,1,0,-9,-2,0,-1,0,0.18181818181818182,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv9_oracle,"no link.link", , ,4,2,0,0,0,
+inv9,"all g,x:File | not isLink[g] and not isLink[x]
+}
+
+pred isLink[f:File]{
+some g:File | g->f in link",2,14.285714285714285,25,6,3,2,0,-21,-4,-3,-2,0,0.16,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2:File | f2 in f1.link and no f2.link",2,14.285714285714285,17,5,1,1,0,-13,-3,-1,-1,0,0.23529411764705882,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1,f2,f3:File | f1->f2 in link and f2->f3 not in link",2,14.285714285714285,19,5,1,1,0,-15,-3,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all x : File | all y : File | all z : File | x->y in link and x->z in link implies y!=z",1,7.142857142857142,33,8,2,3,0,-29,-6,-2,-3,0,0.12121212121212122,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1,f2 : File | is_link[f1] implies not is_link[f2]
+}
+
+pred is_link[f : File]{
+some g : File | f->g in link",1,7.142857142857142,24,5,3,2,0,-20,-3,-3,-2,0,0.16666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2, f3 : File | f1->f2 in link implies f3->f2 not in link",1,7.142857142857142,19,5,1,1,0,-15,-3,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all x,y : File | isLinked[x] implies not isLinked[y]
+}
+
+pred isLinked[f:File]{
+some g:File | g->f in link",1,7.142857142857142,24,5,3,2,0,-20,-3,-3,-2,0,0.16666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"no f:File | f in File.link and f.link in File.link",1,7.142857142857142,19,6,1,1,0,-15,-4,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all x,y,z : File | x->y in link and y->z not in link",1,7.142857142857142,19,5,1,1,0,-15,-3,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all x : File | all y : File | all z : File | x->y in link and y->z not in link",1,7.142857142857142,29,7,1,3,0,-25,-5,-1,-3,0,0.13793103448275862,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f:File | f.link not in File.link",1,7.142857142857142,13,4,0,1,0,-9,-2,0,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+
+trash_ltl
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Trash + Protected", , ,4,2,0,0,0,
+inv1,"before(no Trash and no Protected)",2,16.666666666666664,6,2,1,0,1,-2,0,-1,0,-1,0.6666666666666666,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"before no Trash",2,16.666666666666664,3,1,0,0,1,1,1,0,0,-1,1.3333333333333333,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"no File",1,8.333333333333332,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"before all f:File | f in Protected",1,8.333333333333332,10,2,0,1,1,-6,0,0,-1,-1,0.4,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"always( no Trash and no Protected)",1,8.333333333333332,6,2,1,0,1,-2,0,-1,0,-1,0.6666666666666666,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"no File
+no Protected",1,8.333333333333332,5,2,1,0,0,-1,0,-1,0,0,0.8,1,0,0,0,0,0,0,0,0,0,0,0
+inv1,"always (no File and no Protected)",1,8.333333333333332,6,2,1,0,1,-2,0,-1,0,-1,0.6666666666666666,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"before no Trash + Protected",1,8.333333333333332,5,2,0,0,1,-1,0,0,0,-1,0.8,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"always( before all f:File | f in Protected )",1,8.333333333333332,11,2,0,1,2,-7,0,0,-1,-2,0.36363636363636365,0,0,1,0,0,0,0,0,0,0,0,0
+inv1,"before no Trash and no Protected",1,8.333333333333332,6,2,1,0,1,-2,0,-1,0,-1,0.6666666666666666,0,0,1,0,0,0,0,0,0,0,0,0
+
+trash_rl
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Trash", , ,2,1,0,0,0,
+inv1,"no File",3,75.0,2,1,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t : univ | t in Trash",1,25.0,9,2,0,1,0,-7,-1,0,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"File in Trash", , ,3,1,0,0,0,
+inv2,"no File",13,54.166666666666664,2,1,0,0,0,1,0,0,0,0,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all f: File | f = Trash",2,8.333333333333332,9,2,0,1,0,-6,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all f:File | f=none",1,4.166666666666666,9,2,0,1,0,-6,-1,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"File=Protected+Trash
+no File & Protected",1,4.166666666666666,10,4,1,0,0,-7,-3,-1,0,0,0.3,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"File = Trash + Protected
+no Protected",1,4.166666666666666,8,3,1,0,0,-5,-2,-1,0,0,0.375,1,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all f: File | f != Protected
+all f: File | f = Trash",1,4.166666666666666,19,4,1,2,0,-16,-3,-1,-2,0,0.15789473684210525,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"Trash = univ",1,4.166666666666666,3,1,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"eventually no File",1,4.166666666666666,3,1,0,0,1,0,0,0,0,-1,1.0,0,0,1,0,0,0,0,0,0,0,0,0
+inv2,"no Protected
+all f: File | f = Trash",1,4.166666666666666,12,3,1,1,0,-9,-2,-1,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"one t : Trash | all f : File | f in t",1,4.166666666666666,15,3,0,2,0,-12,-2,0,-2,0,0.2,0,1,0,0,0,0,0,0,0,0,0,0
+inv2,"all f : File | ((f not in Protected) and (f in Trash))",1,4.166666666666666,13,3,1,1,0,-10,-2,-1,-1,0,0.23076923076923078,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"some Trash", , ,2,1,0,0,0,
+inv3,"some f : File | f = Trash",8,44.44444444444444,9,2,0,1,0,-7,-1,0,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv3,"File = Trash + Protected
+some Trash",2,11.11111111111111,8,3,1,0,0,-6,-2,-1,0,0,0.25,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"File = Trash
+some Trash",2,11.11111111111111,6,2,1,0,0,-4,-1,-1,0,0,0.3333333333333333,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"one Trash",2,11.11111111111111,2,1,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"File = Trash & Protected
+some Trash",1,5.555555555555555,8,3,1,0,0,-6,-2,-1,0,0,0.25,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"File = Protected
+one Trash",1,5.555555555555555,6,2,1,0,0,-4,-1,-1,0,0,0.3333333333333333,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"File = Protected
+some Trash",1,5.555555555555555,6,2,1,0,0,-4,-1,-1,0,0,0.3333333333333333,1,0,0,0,0,0,0,0,0,0,0,0
+inv3,"one f: File| f in Trash",1,5.555555555555555,9,2,0,1,0,-7,-1,0,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"no Protected & Trash", , ,4,2,0,0,0,
+inv4,"all f : File | f = Protected - Trash",4,16.0,11,3,0,1,0,-7,-1,0,-1,0,0.36363636363636365,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all x : Protected | no Trash",2,8.0,8,2,0,1,0,-4,0,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"File = Protected
+no Trash",2,8.0,6,2,1,0,0,-2,0,-1,0,0,0.6666666666666666,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"File = Trash + Protected
+no Trash & Protected",2,8.0,10,4,1,0,0,-6,-2,-1,0,0,0.4,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"no Protected + Trash",2,8.0,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"File = Trash - Protected",1,4.0,5,2,0,0,0,-1,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"File = Protected - Trash",1,4.0,5,2,0,0,0,-1,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"no Trash + Protected",1,4.0,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"File = Trash
+no Protected",1,4.0,6,2,1,0,0,-2,0,-1,0,0,0.6666666666666666,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"no f: File | f in Protected and f in File",1,4.0,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all p : Protected | no Trash",1,4.0,8,2,0,1,0,-4,0,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"some Protected
+no Trash",1,4.0,5,2,1,0,0,-1,0,-1,0,0,0.8,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all f: File | f in Protected iff f not in Trash",1,4.0,13,3,1,1,0,-9,-1,-1,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"all f : File | f not in Trash",1,4.0,9,2,0,1,0,-5,0,0,-1,0,0.4444444444444444,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"no Trash",1,4.0,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all p: File |
+not (p in Trash)",1,4.0,10,3,0,1,0,-6,-1,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv4,"Trash = File
+no Protected",1,4.0,6,2,1,0,0,-2,0,-1,0,0,0.6666666666666666,1,0,0,0,0,0,0,0,0,0,0,0
+inv4,"no Protected and no Trash",1,4.0,5,2,1,0,0,-1,0,-1,0,0,0.8,1,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"File = Trash + Protected", , ,5,2,0,0,0,
+inv5,"File - Protected = Trash",19,22.61904761904762,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"Trash = File - Protected",18,21.428571428571427,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File = Trash - Protected",5,5.952380952380952,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File - Protected = Trash
+no Trash & Protected",5,5.952380952380952,10,4,1,0,0,-5,-2,-1,0,0,0.5,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"Trash = File
+no Protected",3,3.571428571428571,6,2,1,0,0,-1,0,-1,0,0,0.8333333333333334,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File not in Protected => File in Trash",3,3.571428571428571,7,2,1,0,0,-2,0,-1,0,0,0.7142857142857143,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f: File| f in Trash and f not in Protected",3,3.571428571428571,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"File = Protected + Trash
+no Protected & Trash",2,2.380952380952381,10,4,1,0,0,-5,-2,-1,0,0,0.5,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File = Trash + Protected
+no Protected",2,2.380952380952381,8,3,1,0,0,-3,-1,-1,0,0,0.625,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f: File | f in Trash <=> f !in Protected",2,2.380952380952381,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all f: File | f !in Protected and f in Trash",2,2.380952380952381,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all f:File - Protected | f in Trash
+no f:Protected | f in Trash",2,2.380952380952381,21,5,1,2,0,-16,-3,-1,-2,0,0.23809523809523808,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"Trash = File + Protected
+no Protected",2,2.380952380952381,8,3,1,0,0,-3,-1,-1,0,0,0.625,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f: File | f in Protected and f in Trash",1,1.1904761904761905,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"File in Trash",1,1.1904761904761905,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File - Protected = Trash and
+no (Trash & Protected)
+no link",1,1.1904761904761905,12,5,1,0,0,-7,-3,-1,0,0,0.4166666666666667,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"no File - Protected",1,1.1904761904761905,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File in Trash
+no Protected & Trash",1,1.1904761904761905,8,3,1,0,0,-3,-1,-1,0,0,0.625,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File in Trash
+no Protected",1,1.1904761904761905,6,2,1,0,0,-1,0,-1,0,0,0.8333333333333334,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f: File | f in Protected and f !in Trash",1,1.1904761904761905,13,3,1,1,0,-8,-1,-1,-1,0,0.38461538461538464,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"File = Protected",1,1.1904761904761905,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File & Trash = File - Protected",1,1.1904761904761905,7,3,0,0,0,-2,-1,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"File = Protected - Trash",1,1.1904761904761905,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"no (Protected & Trash) and (File.link + File)  in Trash",1,1.1904761904761905,12,5,1,0,0,-7,-3,-1,0,0,0.4166666666666667,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f: File | f in Protected => f !in Trash else f in Trash",1,1.1904761904761905,16,4,1,1,0,-11,-2,-1,-1,0,0.3125,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"no (Protected & Trash) and File in Trash",1,1.1904761904761905,8,3,1,0,0,-3,-1,-1,0,0,0.625,1,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all f : File | f = Trash - Protected",1,1.1904761904761905,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"all p: Protected | p !in Trash
+all f: File | f in Trash",1,1.1904761904761905,19,4,1,2,0,-14,-2,-1,-2,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+inv5,"Trash = File - Protected
+no Protected",1,1.1904761904761905,8,3,1,0,0,-3,-1,-1,0,0,0.625,1,0,0,0,0,0,0,0,0,0,0,0
+
+inv6_oracle,"link in File -> lone File", , ,5,2,0,0,0,
+inv6,"lone File.link",31,40.25974025974026,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"lone link",9,11.688311688311687,2,1,0,0,0,3,1,0,0,0,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f:File | one f.link",7,9.090909090909092,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"one File.link",4,5.194805194805195,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"link in File lone -> lone File",2,2.5974025974025974,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"lone f: File | f.link in File",2,2.5974025974025974,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f: File | lone link",2,2.5974025974025974,8,2,0,1,0,-3,0,0,-1,0,0.625,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f:File | f.link = none",2,2.5974025974025974,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f : File | #f.link = 1",1,1.2987012987012987,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"lone f2: File | f2 in File.link",1,1.2987012987012987,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f,f1,f2 : File | f->f1 + f->f2 in link implies f1=f
+
+
+
+all f : File | lone f.link",1,1.2987012987012987,32,9,2,2,0,-27,-7,-2,-2,0,0.15625,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"link in File lone -> one File",1,1.2987012987012987,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"link in File -> one File",1,1.2987012987012987,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f:File | lone File",1,1.2987012987012987,8,2,0,1,0,-3,0,0,-1,0,0.625,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"link in iden",1,1.2987012987012987,3,1,0,0,0,2,1,0,0,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"no File.link",1,1.2987012987012987,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"link in File one -> one File",1,1.2987012987012987,5,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all file: File |
+one file.link",1,1.2987012987012987,10,3,0,1,0,-5,-1,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"one (File <: link)",1,1.2987012987012987,2,1,0,0,0,3,1,0,0,0,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f1: File | some f2: File | f1.link = f2",1,1.2987012987012987,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f: File | one link",1,1.2987012987012987,8,2,0,1,0,-3,0,0,-1,0,0.625,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"one f: File | f.link in File",1,1.2987012987012987,11,3,0,1,0,-6,-1,0,-1,0,0.45454545454545453,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all x : File | lone link",1,1.2987012987012987,8,2,0,1,0,-3,0,0,-1,0,0.625,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"all f:File | one l: File | f.link = l",1,1.2987012987012987,17,4,0,2,0,-12,-2,0,-2,0,0.29411764705882354,0,1,0,0,0,0,0,0,0,0,0,0
+inv6,"lone (iden - link)",1,1.2987012987012987,4,2,0,0,0,1,0,0,0,0,1.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f,f1 : File | f1 in f.link => f1 != f
+lone (File <: link)",1,1.2987012987012987,19,5,2,1,0,-14,-3,-2,-1,0,0.2631578947368421,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"no File.link & Trash", , ,6,3,0,0,0,
+inv7,"all f:File |  no link.f",4,8.88888888888889,10,3,0,1,0,-4,0,0,-1,0,0.6,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no File.link",3,6.666666666666667,4,2,0,0,0,2,1,0,0,0,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all f : link.File | f not in File",3,6.666666666666667,11,3,0,1,0,-5,0,0,-1,0,0.5454545454545454,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no (File.link + link.File) & Trash",3,6.666666666666667,10,5,0,0,0,-4,-2,0,0,0,0.6,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all f: File | no f.link",2,4.444444444444445,10,3,0,1,0,-4,0,0,-1,0,0.6,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f:File | f.link in File implies f not in Trash",1,2.2222222222222223,15,4,1,1,0,-9,-1,-1,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f: File | f !in Trash",1,2.2222222222222223,9,2,0,1,0,-3,1,0,-1,0,0.6666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all o : univ | o->Trash in link",1,2.2222222222222223,11,3,0,1,0,-5,0,0,-1,0,0.5454545454545454,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no f:File | (f in Trash) => (f.link != none)",1,2.2222222222222223,15,4,1,1,0,-9,-1,-1,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no ((link.univ + univ.link) & Trash)",1,2.2222222222222223,10,5,0,0,0,-4,-2,0,0,0,0.6,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"no link -> Trash",1,2.2222222222222223,4,2,0,0,0,2,1,0,0,0,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all f: File | ((some f.link) or (some link.f)) => f not in Trash",1,2.2222222222222223,19,6,2,1,0,-13,-3,-2,-1,0,0.3157894736842105,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no f: File | f in Trash",1,2.2222222222222223,9,2,0,1,0,-3,1,0,-1,0,0.6666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all	f1, f2:File | f1->f2 in link => f1->f2 not in link",1,2.2222222222222223,18,5,1,1,0,-12,-2,-1,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"File.link not in File",1,2.2222222222222223,5,2,0,0,0,1,1,0,0,0,1.2,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"no Trash & Protected and all f:File | f.link in Protected",1,2.2222222222222223,16,5,1,1,0,-10,-2,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all l1,l2 : File | l1->l2 in link implies (l1 not in Trash and l2 not in Trash)",1,2.2222222222222223,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f : File.link + link.File | f not in Trash",1,2.2222222222222223,15,5,0,1,0,-9,-2,0,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,l : univ | f->l in link",1,2.2222222222222223,12,3,0,1,0,-6,0,0,-1,0,0.5,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all	f1, f2:File | f1->f2 in link => f1 not in Trash and f2 not in Trash",1,2.2222222222222223,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"(0 = 1)",1,2.2222222222222223,3,1,0,0,0,3,2,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"no link",1,2.2222222222222223,2,1,0,0,0,4,2,0,0,0,3.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all f: File | no ((f.link & Trash) + (link.f & Trash))",1,2.2222222222222223,18,7,0,1,0,-12,-4,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all x, y : File | x->y in link implies (x not in Trash and y not in Trash)",1,2.2222222222222223,20,5,2,1,0,-14,-2,-2,-1,0,0.3,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f: File | f in Trash and no f.link",1,2.2222222222222223,14,4,1,1,0,-8,-1,-1,-1,0,0.42857142857142855,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f : File.link | f not in File",1,2.2222222222222223,11,3,0,1,0,-5,0,0,-1,0,0.5454545454545454,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no f:File | link.f & f in Trash",1,2.2222222222222223,13,4,0,1,0,-7,-1,0,-1,0,0.46153846153846156,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all t: Trash | no t.link and no link.t",1,2.2222222222222223,15,5,1,1,0,-9,-2,-1,-1,0,0.4,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all t: Trash| no t.link and no t.~link",1,2.2222222222222223,16,6,1,1,0,-10,-3,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all f,g : File | f->g in link and g not in Trash",1,2.2222222222222223,16,4,1,1,0,-10,-1,-1,-1,0,0.375,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"all t : Trash | no link",1,2.2222222222222223,8,2,0,1,0,-2,1,0,-1,0,0.75,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"File = Trash
+all f : File | no f.link",1,2.2222222222222223,14,4,1,1,0,-8,-1,-1,-1,0,0.42857142857142855,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"no Trash",1,2.2222222222222223,2,1,0,0,0,4,2,0,0,0,3.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all f:File |  no link.f  and f not in Trash",1,2.2222222222222223,14,4,1,1,0,-8,-1,-1,-1,0,0.42857142857142855,0,1,0,0,0,0,0,0,0,0,0,0
+inv7,"File.link not in Trash
+
+all f : File.link | f not in Trash",1,2.2222222222222223,17,5,1,1,0,-11,-2,-1,-1,0,0.35294117647058826,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"no link", , ,2,1,0,0,0,
+inv8,"no f: File | f.link in File",1,100.0,11,3,0,1,0,-9,-2,0,-1,0,0.18181818181818182,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv9_oracle,"no link.link", , ,4,2,0,0,0,
+inv9,"all f1: File | all f2: File | f1.link & f2.link = none",2,5.555555555555555,21,6,0,2,0,-17,-4,0,-2,0,0.19047619047619047,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f,l : univ | f->l in link implies l not in File.link",2,5.555555555555555,18,5,1,1,0,-14,-3,-1,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1,f2:File | not f1 in f1.link && not f2 in f2.link && not f1.link = f2.link",2,5.555555555555555,28,11,1,1,0,-24,-9,-1,-1,0,0.14285714285714285,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File | no f1.link -> f2.link",2,5.555555555555555,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File | no f1.link & f2.link",2,5.555555555555555,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all a,b : File|a.link != b.link",2,5.555555555555555,14,4,0,1,0,-10,-2,0,-1,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"link not in ^link",1,2.7777777777777777,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File |
+f1.link != f2.link",1,2.7777777777777777,14,4,0,1,0,-10,-2,0,-1,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"File.^link = File.link - File.iden",1,2.7777777777777777,12,6,0,0,0,-8,-4,0,0,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1,f2:File | f1.link & f2.link = none",1,2.7777777777777777,16,5,0,1,0,-12,-3,0,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File | no link.f1 & link.f2",1,2.7777777777777777,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f: File | f.link.link not in File.link",1,2.7777777777777777,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File | no f1.link & f2.^link",1,2.7777777777777777,16,6,0,1,0,-12,-4,0,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"no f: File | f.link.link in File",1,2.7777777777777777,13,4,0,1,0,-9,-2,0,-1,0,0.3076923076923077,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File | no link.f1 & link.f1",1,2.7777777777777777,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1,f2:File | disj[f1.link,f2.link]",1,2.7777777777777777,14,3,0,1,0,-10,-1,0,-1,0,0.2857142857142857,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1: File |   f1.^link = none",1,2.7777777777777777,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"no link.~link",1,2.7777777777777777,5,3,0,0,0,-1,-1,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File |
+some f1.link implies f1.link != f2.link",1,2.7777777777777777,19,6,1,1,0,-15,-4,-1,-1,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"no File.link",1,2.7777777777777777,4,2,0,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1,f2,f3 : univ | f1->f2 in link implies (f1->f3 not in link and f2->f3 not in link)",1,2.7777777777777777,25,7,2,1,0,-21,-5,-2,-1,0,0.16,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1:File,f2:File | not f1.link = f2.link",1,2.7777777777777777,18,6,0,1,0,-14,-4,0,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f : File | no link.f.link",1,2.7777777777777777,12,4,0,1,0,-8,-2,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File | no f1.link + f2.link",1,2.7777777777777777,15,5,0,1,0,-11,-3,0,-1,0,0.26666666666666666,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all l1,l2:File.link | disj [l1,l2]",1,2.7777777777777777,12,2,0,1,0,-8,0,0,-1,0,0.3333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all l1: File.link |   all l2: File.link | l2 & l1 = none",1,2.7777777777777777,21,6,0,2,0,-17,-4,0,-2,0,0.19047619047619047,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f,l : File | f->l in link implies l not in File.link",1,2.7777777777777777,18,5,1,1,0,-14,-3,-1,-1,0,0.2222222222222222,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1: File | all f2: File | f1.link != f2.link",1,2.7777777777777777,19,5,0,2,0,-15,-3,0,-2,0,0.21052631578947367,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1, f2 : File | no f1.link & f2.*link",1,2.7777777777777777,16,6,0,1,0,-12,-4,0,-1,0,0.25,0,1,0,0,0,0,0,0,0,0,0,0
+inv9,"all f1,f2:File | f1 & f1.link = none and f2 & f2.link = none and not f1.link = f2.link",1,2.7777777777777777,30,11,1,1,0,-26,-9,-1,-1,0,0.13333333333333333,0,1,0,0,0,0,0,0,0,0,0,0
+

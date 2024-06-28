@@ -1,0 +1,209 @@
+
+trainStationNew
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"some Entry
+	some Exit", , ,5,2,1,0,0,
+inv1,"lone Entry
+lone Exit",9,3.9301310043668125,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t: Track| t in Entry and t in Exit",5,2.1834061135371177,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track| one Entry and one Exit",5,2.1834061135371177,11,3,1,1,0,-6,-1,0,-1,0,0.45454545454545453,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some en:Entry | en->t in succs
+all t:Track | one ex:Exit | t->ex in succs",5,2.1834061135371177,35,8,1,4,0,-30,-6,0,-4,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry ,ex:Exit | e in t.succs and ex in t.succs",4,1.7467248908296942,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"(all x : Exit | all y : Track | x->y not in succs) and
+(all x : Entry | all y : Track | y->x not in succs) and
+(all x : Junction | some y,z : Track | y->x in succs and x->z in succs) and
+(some x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs))",4,1.7467248908296942,96,23,5,9,0,-91,-21,-4,-9,0,0.052083333333333336,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | Entry in t and Exit in t",3,1.3100436681222707,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all j:Junction | some e:Entry, x:Exit | e->j in succs and j->x in succs",3,1.3100436681222707,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some (t.succs & Entry) && some (t.succs & Exit)",3,1.3100436681222707,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some (Entry &t.succs) and some(Exit &t.succs)",3,1.3100436681222707,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | t in Entry || t in Exit",3,1.3100436681222707,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | some t & Entry
+all t : Track | some t & Exit",3,1.3100436681222707,21,6,1,2,0,-16,-4,0,-2,0,0.23809523809523808,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all s: Track | (some e: Entry | e in s.succs) and (some x: Exit | x in s.succs)",3,1.3100436681222707,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t: Track | t in Junction + Entry + Exit and #t.succs>1",3,1.3100436681222707,20,7,1,1,0,-15,-5,0,-1,0,0.25,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs)",2,0.8733624454148471,37,9,3,3,0,-32,-7,-2,-3,0,0.13513513513513514,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"succs in Track -> some Entry
+succs in Track -> one Exit",2,0.8733624454148471,11,4,1,0,0,-6,-2,0,0,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"lone Exit
+lone Entry",2,0.8733624454148471,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all s: Track | s in Junction + Entry => #(s.succs & Entry) > 0 && #(s.succs & Exit) > 0",2,0.8733624454148471,29,11,2,1,0,-24,-9,-1,-1,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.^succs",2,0.8733624454148471,24,7,0,2,0,-19,-5,1,-2,0,0.20833333333333334,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some (t & Entry)",2,0.8733624454148471,10,3,0,1,0,-5,-1,1,-1,0,0.5,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some j : Junction | some e : Entry | j in Track or e in Track",2,0.8733624454148471,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"Entry = Track.^(succs) and Exit = Track.^(succs)",2,0.8733624454148471,13,6,1,0,0,-8,-4,0,0,0,0.38461538461538464,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t : Track | t in Entry
+all t : Track | t in Exit",2,0.8733624454148471,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.*succs",2,0.8733624454148471,24,7,0,2,0,-19,-5,1,-2,0,0.20833333333333334,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t : Track | t = Entry",2,0.8733624454148471,9,2,0,1,0,-4,0,1,-1,0,0.5555555555555556,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x: Track | some y : Entry, z: Exit | y in x.succs && z in x.succs",2,0.8733624454148471,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"Entry in Track.^(succs) and Exit in Track.^(succs)",2,0.8733624454148471,13,6,1,0,0,-8,-4,0,0,0,0.38461538461538464,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Track = Entry + Exit",2,0.8733624454148471,5,2,0,0,0,0,0,1,0,0,1.0,0,0,0,0,0,0,1,0,0,0,0,0
+inv1,"all t:Track | one ex:Exit | one e:Entry | e in Track && ex in Track",2,0.8733624454148471,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry, ex:Exit | e in (^succs).t and ex in t.^(succs)",2,0.8733624454148471,29,9,1,2,0,-24,-7,0,-2,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | t in Exit and t in Entry",2,0.8733624454148471,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"(all x : Exit | all y : Track | x->y not in succs) and
+(all x : Entry | all y : Track | y->x not in succs) and
+
+all x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs)",2,0.8733624454148471,72,17,4,7,0,-67,-15,-3,-7,0,0.06944444444444445,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x: Track| one Entry
+all y: Track| one Exit",2,0.8733624454148471,17,4,1,2,0,-12,-2,0,-2,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some Entry
+some Junction",2,0.8733624454148471,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t : Track | Entry = t.^(succs) and Exit = t.^(succs)",2,0.8733624454148471,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(^succs.t)>0 and #Entry&(t.^succs+^succs.t)>0",1,0.43668122270742354,30,14,1,1,0,-25,-12,0,-1,0,0.16666666666666666,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x: Track| some e: Entry, j: Exit | x = e or x = j",1,0.43668122270742354,23,5,1,2,0,-18,-3,0,-2,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Exit | all y : Track | x->y not in succs and
+
+all x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs)",1,0.43668122270742354,55,13,4,5,0,-50,-11,-3,-5,0,0.09090909090909091,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x: Track| some e: Entry, j: Junction | x = e or x = j",1,0.43668122270742354,23,5,1,2,0,-18,-3,0,-2,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | one ex:Exit , en:Entry | t->ex in succs and t->en in succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | t in Entry or (some t.succs & Entry) or t in Exit or (some t.succs & Exit)",1,0.43668122270742354,25,9,1,1,0,-20,-7,0,-1,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one x,y : Track | Entry = x and Junction = y",1,0.43668122270742354,14,3,1,1,0,-9,-1,0,-1,0,0.35714285714285715,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some Entry
+all t: Track | one Exit",1,0.43668122270742354,17,4,1,2,0,-12,-2,0,-2,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.*succs
+all t:Track | some s:Signal | t -> s in signals",1,0.43668122270742354,42,11,1,4,0,-37,-9,0,-4,0,0.11904761904761904,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all e: Entry, x: Exit | some (e & x) && some (x & e)",1,0.43668122270742354,19,6,1,1,0,-14,-4,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Entry&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)>0",1,0.43668122270742354,35,17,1,1,0,-30,-15,0,-1,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t: Track | one t.succs and one succs.t",1,0.43668122270742354,15,5,1,1,0,-10,-3,0,-1,0,0.3333333333333333,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some e: Entry | some x: Exit | e in t.succs && x in t.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some t.succs implies some x:Exit, e:Entry | x in t.^succs and e in t.^succs",1,0.43668122270742354,34,11,2,2,0,-29,-9,-1,-2,0,0.14705882352941177,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track.*(succs) | Entry in t and Exit in t",1,0.43668122270742354,16,5,1,1,0,-11,-3,0,-1,0,0.3125,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | one ent:Entry | one ex:Exit | t in Entry and t in Exit",1,0.43668122270742354,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | one e:Entry, ex:Exit | e in t && ex in t",1,0.43668122270742354,23,5,1,2,0,-18,-3,0,-2,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs and x!=y and x!=z",1,0.43668122270742354,35,9,1,3,0,-30,-7,0,-3,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all j:Junction | j in Track implies some e:Entry, x:Exit | e!=j and j!=x implies e->j in succs and j->x in succs",1,0.43668122270742354,39,10,4,2,0,-34,-8,-3,-2,0,0.1282051282051282,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"Entry = Track.^(succs) or Exit = Track.^(succs)",1,0.43668122270742354,13,6,1,0,0,-8,-4,0,0,0,0.38461538461538464,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.^succs)>0 and #Entry&(^succs.t)>0",1,0.43668122270742354,25,11,1,1,0,-20,-9,0,-1,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | Entry in x and Exit in x",1,0.43668122270742354,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t1,t2,t : Track | t1 in Entry and t2 in Exit implies (t1 in t.succs and t2 in t.succs)",1,0.43668122270742354,27,7,3,1,0,-22,-5,-2,-1,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track |one en:Entry, ex: Exit | en in t.succs and ex in t.succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one e: Entry | e in Track",1,0.43668122270742354,9,2,0,1,0,-4,0,1,-1,0,0.5555555555555556,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all s: Track | s in Junction + Entry => #(s.succs & Entry) > 1 && #(s.succs & Exit) > 1",1,0.43668122270742354,29,11,2,1,0,-24,-9,-1,-1,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry, ex:Exit | e in t && ex in t",1,0.43668122270742354,23,5,1,2,0,-18,-3,0,-2,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some en:Entry | en->t in succs
+all t:Track | one e:Exit | e->t not in succs",1,0.43668122270742354,35,8,1,4,0,-30,-6,0,-4,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some en:Entry | en->t in succs
+all t:Track | one e:Exit | e!=t and e->t not in succs",1,0.43668122270742354,39,9,2,4,0,-34,-7,-1,-4,0,0.1282051282051282,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some en:Entry | one ex:Exit | en->t in succs and t->ex in succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"Entry in Track and Exit in Track and Entry in Track.^(succs) and Exit in Track.^(succs)",1,0.43668122270742354,19,8,1,0,0,-14,-6,0,0,0,0.2631578947368421,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"some j : Junction | some e : Entry | j in Track or e in Entry",1,0.43668122270742354,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs and x!=y and x!=z and y!=z and x not in x.succs",1,0.43668122270742354,43,12,1,3,0,-38,-10,0,-3,0,0.11627906976744186,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all s : Track | some e: Entry | some e1 : Exit | (e + e1) in s",1,0.43668122270742354,23,5,0,3,0,-18,-3,1,-3,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track.^(succs) | Entry in t and Exit in t",1,0.43668122270742354,16,5,1,1,0,-11,-3,0,-1,0,0.3125,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | Entry in x or Exit in x",1,0.43668122270742354,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry ,ex:Exit | e in t.succs and ex in t.succs and t in t.succs",1,0.43668122270742354,32,9,1,2,0,-27,-7,0,-2,0,0.15625,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track.succs | some x:Exit, e:Entry | x in t.^succs and e in t.^succs",1,0.43668122270742354,31,10,1,2,0,-26,-8,0,-2,0,0.16129032258064516,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry | e in t.*succs",1,0.43668122270742354,18,5,0,2,0,-13,-3,1,-2,0,0.2777777777777778,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | one ex:Exit | one e:Entry | e in t && ex in t",1,0.43668122270742354,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"(all x : Exit | all y : Track | x->y not in succs) and
+(all x : Entry | all y : Track | y->x not in succs) and
+(all x : Junction | some y,z : Track | y->x in succs and x->z in succs) and
+(all x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs))",1,0.43668122270742354,96,23,5,9,0,-91,-21,-4,-9,0,0.052083333333333336,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track |some en:Entry, ex: Exit | en in t.succs and ex in t.succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | lone ent: Entry, ex: Exit | ent in t.succs and ex in t.succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"succs in Track -> some Entry
+succs in Track -> some Exit",1,0.43668122270742354,11,4,1,0,0,-6,-2,0,0,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t : Track | some t implies Entry = t.^(succs) and Exit = t.^(succs)",1,0.43668122270742354,22,8,2,1,0,-17,-6,-1,-1,0,0.22727272727272727,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all s: Track | s in Junction + Entry + Exit => #(s.succs & Entry) > 0 && #(s.succs & Exit) > 0",1,0.43668122270742354,31,12,2,1,0,-26,-10,-1,-1,0,0.16129032258064516,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and (all t : Track | z->t not in succs) and x->z in succs)",1,0.43668122270742354,48,12,3,4,0,-43,-10,-2,-4,0,0.10416666666666667,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track.^(succs) | Entry in t or Exit in t",1,0.43668122270742354,16,5,1,1,0,-11,-3,0,-1,0,0.3125,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry | some ex:Exit | e in t.succs and t in e.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all a : Track, b : Entry, c : Exit | a -> b in succs and a -> c in succs",1,0.43668122270742354,25,7,1,1,0,-20,-5,0,-1,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry, ex:Exit | e in t.succs and ex in t.succs
+all e:Entry, ex:Exit | some t:Track | e in t.succs and ex in t.succs",1,0.43668122270742354,55,14,3,4,0,-50,-12,-2,-4,0,0.09090909090909091,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | succs.t in Entry and t.succs in Exit",1,0.43668122270742354,17,5,1,1,0,-12,-3,0,-1,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"(all x: Track| lone Entry) && (all y: Track| lone Exit)",1,0.43668122270742354,17,4,1,2,0,-12,-2,0,-2,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all j:Junction | j in Track implies some e:Entry, x:Exit | e->j in succs and j->x in succs",1,0.43668122270742354,31,8,2,2,0,-26,-6,-1,-2,0,0.16129032258064516,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some en : Entry | some ex : Exit | en in t.succs and ex in t.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"Track in Entry and Track in Exit",1,0.43668122270742354,7,2,1,0,0,-2,0,0,0,0,0.7142857142857143,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.*succs
+all t:Track | some s:Signal | s in t",1,0.43668122270742354,40,10,1,4,0,-35,-8,0,-4,0,0.125,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | some exit : Exit | some entry : Entry | exit in t.succs and entry in t.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | Entry in x.succs and Exit in x.succs",1,0.43668122270742354,17,5,1,1,0,-12,-3,0,-1,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | (Entry = t or Entry = t.^(succs)) and (Exit = t or Exit = t.^(succs))",1,0.43668122270742354,27,9,3,1,0,-22,-7,-2,-1,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.^succs+^succs.t)>0 and #Entry&(t.^succs+^succs.t)>0",1,0.43668122270742354,35,17,1,1,0,-30,-15,0,-1,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some Entry and lone Exit",1,0.43668122270742354,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Entry in Track and Exit in Track and Entry in Track.^(succs) or Exit in Track.^(succs)",1,0.43668122270742354,20,8,2,0,0,-15,-6,-1,0,0,0.25,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all e: Entry | one Exit and one Entry",1,0.43668122270742354,11,3,1,1,0,-6,-1,0,-1,0,0.45454545454545453,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs and x!=y and x!=z and y!=z",1,0.43668122270742354,38,10,1,3,0,-33,-8,0,-3,0,0.13157894736842105,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.succs)>0 and #Entry&(t.succs)>0",1,0.43668122270742354,23,9,1,1,0,-18,-7,0,-1,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x: Track | x.succs in Entry  && x.succs in Exit",1,0.43668122270742354,17,5,1,1,0,-12,-3,0,-1,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track |some ex:Exit, e:Entry | e in t && ex in t",1,0.43668122270742354,23,5,1,2,0,-18,-3,0,-2,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all j:Junction | some e:Entry, x:Exit | e->j in succs and j->x in succs and e!=j and j!=x",1,0.43668122270742354,33,9,1,2,0,-28,-7,0,-2,0,0.15151515151515152,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"succs in Track -> some Entry
+succs in Track -> some Exit
+signals in Track -> some Signal",1,0.43668122270742354,16,6,1,0,0,-11,-4,0,0,0,0.3125,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t:Track | one (t & Entry & Exit)",1,0.43668122270742354,12,4,0,1,0,-7,-2,1,-1,0,0.4166666666666667,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one Entry
+one Junction",1,0.43668122270742354,5,2,1,0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some (t & Entry) && some (t.succs & Exit)",1,0.43668122270742354,17,6,1,1,0,-12,-4,0,-1,0,0.29411764705882354,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | some e : Entry | some s : Exit| e in t and s in t",1,0.43668122270742354,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some(Entry&Exit)",1,0.43668122270742354,10,3,0,1,0,-5,-1,1,-1,0,0.5,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | x in Entry or x in Exit",1,0.43668122270742354,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"lone e: Entry, ex: Exit | e in Track.succs",1,0.43668122270742354,15,4,0,1,0,-10,-2,1,-1,0,0.3333333333333333,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry, ex:Exit | e in t.succs or ex in t.succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track, s:Signal | t->s in signals",1,0.43668122270742354,15,4,0,1,0,-10,-2,1,-1,0,0.3333333333333333,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some e: Entry| e in t.succs and some s: Exit|  s in t.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all e : Entry | all ex : Exit | all t : Track | e in t and ex in t",1,0.43668122270742354,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.^succs+t)>0 and #Entry&(*succs.t+t)>0",1,0.43668122270742354,29,13,1,1,0,-24,-11,0,-1,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some x:Exit, e:Entry | x in t.^succs and e in t.^succs",1,0.43668122270742354,29,9,1,2,0,-24,-7,0,-2,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all a : Track | some b : Entry, c : Exit | a -> b in succs and a -> c in succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some Entry&t and some Exit&t",1,0.43668122270742354,15,5,1,1,0,-10,-3,0,-1,0,0.3333333333333333,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | #(t.succs & Entry) > 1 && #(t.succs & Exit) > 1",1,0.43668122270742354,23,9,1,1,0,-18,-7,0,-1,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some (succs.t & Entry) && some (t.succs & Exit)",1,0.43668122270742354,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"(all x : Exit | all y : Track | x->y not in succs) and
+(all x : Entry | all y : Track | y->x not in succs) and
+(all x : Junction | some y,z : Track | y->x in succs and x->z in succs)",1,0.43668122270742354,59,14,2,6,0,-54,-12,-1,-6,0,0.0847457627118644,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all e:Entry, ex:Exit | some t:Track | e in t.succs and ex in t.succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t: Track | t in Junction + Entry + Exit and #t.succs>0",1,0.43668122270742354,20,7,1,1,0,-15,-5,0,-1,0,0.25,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | t.^(succs) = Entry or t.^(succs) = Exit",1,0.43668122270742354,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"lone Entry
+lone Exit
+Entry != Exit",1,0.43668122270742354,8,3,1,0,0,-3,-1,0,0,0,0.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all x : Exit | all y : Track | x->y not in succs
+
+all x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs)",1,0.43668122270742354,55,13,4,5,0,-50,-11,-3,-5,0,0.09090909090909091,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | (t in Exit) or (t in Entry) or (t in Junction and (some k : Track | t->k in succs))",1,0.43668122270742354,28,7,2,2,0,-23,-5,-1,-2,0,0.17857142857142858,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some en:Entry | en!=t and en->t in succs
+all t:Track | one e:Exit | e!=t and e->t not in succs",1,0.43668122270742354,43,10,3,4,0,-38,-8,-2,-4,0,0.11627906976744186,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry, ex:Exit | t in Entry and t in Exit",1,0.43668122270742354,23,5,1,2,0,-18,-3,0,-2,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all ex: Exit, ent: Entry | one t: Track | ex in t.succs and ent in t.succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some Track.succs",1,0.43668122270742354,4,2,0,0,0,1,0,1,0,0,1.25,0,0,0,0,0,0,1,0,0,0,0,0
+inv1,"all t:Track | some e:Entry,x:Exit | t->e in succs and t->x in succs",1,0.43668122270742354,27,7,1,2,0,-22,-5,0,-2,0,0.18518518518518517,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.*succs+*succs.t)>0 and #Entry&(t.*succs+*succs.t)>0",1,0.43668122270742354,35,17,1,1,0,-30,-15,0,-1,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some j : Junction | some e : Entry | j in Track and e in Track",1,0.43668122270742354,19,4,1,2,0,-14,-2,0,-2,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x:Track | some succs.x",1,0.43668122270742354,10,3,0,1,0,-5,-1,1,-1,0,0.5,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | all y:Exit | all z:Entry | y in x.succs and z in x.succs and x!=y and x!=z and y!=z and x not in x.succs",1,0.43668122270742354,43,12,1,3,0,-38,-10,0,-3,0,0.11627906976744186,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some e: Entry | e in t",1,0.43668122270742354,15,3,0,2,0,-10,-1,1,-2,0,0.3333333333333333,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some t: Track | lone t.succs and lone succs.t",1,0.43668122270742354,15,5,1,1,0,-10,-3,0,-1,0,0.3333333333333333,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"some Track.succs and Track != Track.succs",1,0.43668122270742354,10,4,1,0,0,-5,-2,0,0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t : Track.*(succs) | Entry = t or Exit = t",1,0.43668122270742354,16,5,1,1,0,-11,-3,0,-1,0,0.3125,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | some en : Entry | some ex : Exit | en in t and ex in t",1,0.43668122270742354,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some (t & Entry & Exit)",1,0.43668122270742354,12,4,0,1,0,-7,-2,1,-1,0,0.4166666666666667,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)>0",1,0.43668122270742354,35,17,1,1,0,-30,-15,0,-1,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t1,t2 : Track | t1 != t2 implies some t1 & Entry and some t2 & Exit",1,0.43668122270742354,20,6,2,1,0,-15,-4,-1,-1,0,0.25,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.succs+succs.t)>0 and #Entry&(t.succs+succs.t)>0",1,0.43668122270742354,31,13,1,1,0,-26,-11,0,-1,0,0.16129032258064516,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track.*(succs) | Entry = t or Exit in t",1,0.43668122270742354,16,5,1,1,0,-11,-3,0,-1,0,0.3125,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | some e:Entry | some ex:Exit | e in t.succs and ex in t.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all j:Junction | some e:Entry, x:Exit | e!=j and j!=x implies e->j in succs and j->x in succs",1,0.43668122270742354,35,9,3,2,0,-30,-7,-2,-2,0,0.14285714285714285,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"Entry in Track.^(succs) or Exit in Track.^(succs)",1,0.43668122270742354,13,6,1,0,0,-8,-4,0,0,0,0.38461538461538464,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all t: Track | #t.succs in Entry && #t.succs in Exit",1,0.43668122270742354,19,7,1,1,0,-14,-5,0,-1,0,0.2631578947368421,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | #(succs.t & Entry)>=1 && #(t.succs & Exit)>=1",1,0.43668122270742354,23,9,1,1,0,-18,-7,0,-1,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some Entry and one Exit",1,0.43668122270742354,11,3,1,1,0,-6,-1,0,-1,0,0.45454545454545453,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"lone e: Entry, ex: Exit | e in Track.succs or ex in Track.succs",1,0.43668122270742354,21,6,1,1,0,-16,-4,0,-1,0,0.23809523809523808,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.*succs)>0 and #Entry&(*succs.t)>0",1,0.43668122270742354,25,11,1,1,0,-20,-9,0,-1,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | t in Exit or t in Entry",1,0.43668122270742354,13,3,1,1,0,-8,-1,0,-1,0,0.38461538461538464,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"one t:Track, s:Signal | t->s in signals implies t in Entry and t in Exit",1,0.43668122270742354,23,6,2,1,0,-18,-4,-1,-1,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track | one e : Entry | e in t and one x : Exit | x in t",1,0.43668122270742354,25,5,1,3,0,-20,-3,0,-3,0,0.2,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t: Track | some e: Entry, x: Exit | e in t && x in t",1,0.43668122270742354,23,5,1,2,0,-18,-3,0,-2,0,0.21739130434782608,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"lone Entry",1,0.43668122270742354,2,1,0,0,0,3,1,1,0,0,2.5,0,0,0,0,0,0,1,0,0,0,0,0
+inv1,"all t:Track | some e:Entry | some ex:Exit | e in t.succs and t in ex.succs",1,0.43668122270742354,29,7,1,3,0,-24,-5,0,-3,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t:Track | #Exit&(t.^succs+t)>0 and #Entry&(^succs.t+t)>0",1,0.43668122270742354,29,13,1,1,0,-24,-11,0,-1,0,0.1724137931034483,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"(all x: Track| lone Entry && lone Exit)",1,0.43668122270742354,11,3,1,1,0,-6,-1,0,-1,0,0.45454545454545453,0,0,0,1,0,0,0,0,0,0,0,0
+inv1,"all t : Track - Entry - Exit | no t.succs",1,0.43668122270742354,14,5,0,1,0,-9,-3,1,-1,0,0.35714285714285715,0,0,0,1,0,0,0,0,0,0,0,0
+

@@ -1,0 +1,268 @@
+
+trainStationOld
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv2_oracle,"all s : Signal | eventually s in Green", , ,10,2,0,1,1,
+inv2,"all s:Signal |eventually s in Green",37,92.5,10,2,0,1,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all s : Signal - Green | eventually s in Green",1,2.5,12,3,0,1,1,-2,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"eventually (all s:Signal | eventually s in Green)",1,2.5,11,2,0,1,2,-1,0,0,0,-1,0.9090909090909091,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all t : Track | eventually t.signal in Green",1,2.5,12,3,0,1,1,-2,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"always pos' = pos", , ,5,1,0,0,2,
+inv3,"always pos' = pos",9,24.324324324324326,5,1,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"always all t:Train | t.pos'=t.pos",6,16.216216216216218,15,4,0,1,2,-10,-3,0,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"always pos = pos'",5,13.513513513513514,5,1,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t:Train | always t.pos'=t.pos",4,10.81081081081081,15,4,0,1,2,-10,-3,0,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)",3,8.108108108108109,35,10,3,1,2,-30,-9,-3,-1,0,0.14285714285714285,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"always all t:Train | t.pos = t.pos'",3,8.108108108108109,15,4,0,1,2,-10,-3,0,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"always (all t:Train | (t.pos)'=t.pos)",2,5.405405405405405,15,4,0,1,2,-10,-3,0,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t : Train | always t.pos = t.pos'",2,5.405405405405405,15,4,0,1,2,-10,-3,0,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"always all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)",2,5.405405405405405,36,10,3,1,3,-31,-9,-3,-1,-1,0.1388888888888889,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"always(all t : Train  | always (t.pos' = t.pos))",1,2.7027027027027026,16,4,0,1,3,-11,-3,0,-1,-1,0.3125,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"always all t : Track | lone pos.t", , ,11,3,0,1,1,
+inv4,"always pos.~pos in iden",11,39.285714285714285,7,3,0,0,1,4,0,0,1,0,1.5714285714285714,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"always all disj t1,t2:Train | no (t1.pos & t2.pos)",8,28.57142857142857,16,5,0,1,1,-5,-2,0,0,0,0.6875,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all t : Track | always lone t.~pos",3,10.714285714285714,12,4,0,1,1,-1,-1,0,0,0,0.9166666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"always all disj t, t2 : Train | some (t.pos + t2.pos) => t.pos != t2.pos",1,3.571428571428571,24,8,1,1,1,-13,-5,-1,0,0,0.4583333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"always( all tk : Track | lone pos.tk )",1,3.571428571428571,11,3,0,1,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"always (all t : Track | lone pos.t)",1,3.571428571428571,11,3,0,1,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"always all t : Track| lone (t.~pos)",1,3.571428571428571,12,4,0,1,1,-1,-1,0,0,0,0.9166666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all disj t1,t2:Train | always no (t1.pos & t2.pos)",1,3.571428571428571,16,5,0,1,1,-5,-2,0,0,0,0.6875,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"always all disj t, t2 : Train | some (t.pos) => t.pos != t2.pos",1,3.571428571428571,20,6,1,1,1,-9,-3,-1,0,0,0.55,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"all t : Train | always (some t.pos implies (t.pos' = t.pos or (t.pos in Exit implies no t.pos' else (some t.pos' and t.pos' in t.pos.prox))))", , ,48,16,4,1,5,
+
+inv6_oracle,"all s : Signal | always eventually (s in Green) and always eventually (s not in Green)", , ,17,3,1,1,4,
+inv6,"always (all s:Signal | (s in Green implies eventually s not in Green) and (s not in Green implies eventually s in Green))",2,66.66666666666666,24,5,3,1,3,-7,-2,-2,0,1,0.7083333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always (all s:(Signal-Green)  | eventually s in Green)
+always (all s:Green  | eventually s in (Signal-Green))",1,33.33333333333333,27,6,1,2,4,-10,-3,0,-1,0,0.6296296296296297,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"all t : Train | always (some t.pos implies eventually no t.pos)", , ,17,5,1,1,2,
+inv7,"always (all t:pos.Track | eventually no t.pos)",4,50.0,14,4,0,1,2,3,1,1,0,0,1.2142857142857142,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"always (all t:Train | some t.pos implies eventually no t.pos)",3,37.5,17,5,1,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"always ( all t:Train | some t.pos :> Track implies eventually no t.pos :> Track )",1,12.5,21,7,1,1,2,-4,-2,0,0,0,0.8095238095238095,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"all t : Train, p : Track | always (t.pos = p and p.signal not in Green implies (p.signal in Green releases t.pos = p))", , ,34,10,2,1,2,
+inv8,"always ( all t:Train | some t.pos.signal and (t.pos.signal not in Green) implies t.pos' = t.pos )",1,50.0,30,10,2,1,2,4,0,0,0,0,1.1333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"always ( all t:Train | some t.pos.signal and (t.pos.signal  in Signal-Green) implies t.pos' = t.pos )",1,50.0,32,11,2,1,2,2,-1,0,0,0,1.0625,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv9_oracle,"all t : Train | no t.pos until (some t.pos & Entry)", , ,17,6,0,1,1,
+
+inv10_oracle,"all j : Junction | always lone (prox.j).signal & Green", , ,15,5,0,1,1,
+inv10,"always (all j:Junction | lone (prox.j).signal & Green)",3,33.33333333333333,15,5,0,1,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always (all j:Junction | lone((prox.j).signal :> Green))",3,33.33333333333333,15,5,0,1,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always (all j:Junction | lone (prox.Junction).signal & Green)",1,11.11111111111111,15,5,0,1,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always (lone (prox.Junction).signal & Green)",1,11.11111111111111,9,4,0,0,1,6,1,0,1,0,1.6666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always (all j:Junction | lone (prox.j).signal & Green)
+always (lone (prox.Junction).signal & Green)",1,11.11111111111111,25,9,1,1,2,-10,-4,-1,0,-1,0.6,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv11_oracle,"all t : Train | always (some t.pos implies once some t.pos & Entry)", , ,19,6,1,1,2,
+inv11,"always ( all t:Train | some t.pos implies once some t.pos :> Entry)",6,85.71428571428571,19,6,1,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always ( all t:Train| some t.pos implies  once ( some t.pos and t.pos in Entry) )",1,14.285714285714285,23,7,2,1,2,-4,-1,-1,0,0,0.8260869565217391,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv12_oracle,"all t : Train | always (some t.pos implies some e : *prox.(t.pos) & Entry | all x : *prox.(t.pos) & e.*prox | once t.pos = x)", , ,47,17,1,3,2,
+
+inv13_oracle,"all t : Train | always ((no t.pos and once some t.pos) implies always no t.pos)", , ,23,7,2,1,3,
+inv13,"always all t : Train | (one t.pos and no t.pos') implies (always no t.pos')",1,50.0,24,7,2,1,4,-1,0,0,0,-1,0.9583333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"always (all t:Train | (once some t.pos and no t.pos ) => always no t.pos)",1,50.0,23,7,2,1,3,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv14_oracle,"all s : Signal, t : Train | always (s in Green and t.pos = signal.s and t.pos' != signal.s implies after s not in Green)", , ,35,10,2,1,3,
+
+inv15_oracle,"all t : Train, p : Track | not (eventually always t.pos = p)", , ,18,5,0,1,2,
+inv15,"always eventually (all t:Train | (no t.pos => eventually some t.pos ) and some t.pos => eventually (t.pos !=t.pos')   )",1,33.33333333333333,33,10,3,1,5,-15,-5,-3,0,-3,0.5454545454545454,0,0,0,0,0,0,0,0,0,0,0,0
+inv15,"always all t : Train | some t.pos implies eventually t.pos != t.pos'",1,33.33333333333333,21,6,1,1,3,-3,-1,-1,0,-1,0.8571428571428571,0,0,0,0,0,0,0,0,0,0,0,0
+inv15,"always (all t:pos.Track | eventually (t.pos)' != t.pos)",1,33.33333333333333,18,5,0,1,3,0,0,0,0,-1,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv16_oracle,"all t : Train | always (some t.pos & Exit implies (some t.pos since some t.pos & Entry))", , ,25,9,1,1,2,
+inv16,"always (all t:Train | one (t.pos:>Exit) => (some t.pos since one (t.pos:>Entry )))",1,100.0,25,9,1,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv17_oracle,"all t : Train | always ((some t.pos and historically no (Train-t).pos) implies (no Train.pos & Exit until some t.pos & Exit))", , ,33,12,2,1,3,
+
+inv18_oracle,"all j : Junction | always (all disj x,y : pos.(prox.j) | before (x in pos.(prox.j) and y not in pos.(prox.j)) implies (x in pos.j releases (y not in pos.j)))", , ,46,14,2,2,3,
+
+trash_ltl
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv2_oracle,"no File
+  	some File'", , ,6,2,1,0,1,
+inv2,"no File
+after some File",59,71.95121951219512,6,2,1,0,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no File
+some File'",20,24.390243902439025,6,2,1,0,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"historically no File
+after some File",2,2.4390243902439024,7,2,1,0,2,-1,0,0,0,-1,0.8571428571428571,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"historically no File and some File'",1,1.2195121951219512,7,2,1,0,2,-1,0,0,0,-1,0.8571428571428571,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"always some File", , ,3,1,0,0,1,
+inv3,"always some File",98,98.98989898989899,3,1,0,0,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"always some f:File | f in File",1,1.0101010101010102,10,2,0,1,1,-7,-1,0,-1,0,0.3,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"eventually some Trash", , ,3,1,0,0,1,
+inv4,"eventually some Trash",80,74.76635514018692,3,1,0,0,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"eventually some f:File | f in Trash",21,19.626168224299064,10,2,0,1,1,-7,-1,0,-1,0,0.3,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"eventually some f:File | f not in Trash implies  f in Trash",4,3.7383177570093453,14,3,1,1,1,-11,-2,-1,-1,0,0.21428571428571427,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"eventually some (File & Trash)",2,1.8691588785046727,5,2,0,0,1,-2,-1,0,0,0,0.6,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"eventually (some f:File | f not in File')", , ,11,2,0,1,2,
+inv5,"eventually some f:File | f not in File'",35,54.6875,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"eventually some f: File | eventually f not in File",8,12.5,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"eventually some f:File | after f not in File",8,12.5,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"eventually File not in File'",5,7.8125,5,1,0,0,2,6,1,0,1,0,2.2,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"eventually(some f:File | f in File implies eventually f not in File)",4,6.25,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"eventually (some f:File | eventually no f&File)",2,3.125,12,3,0,1,2,-1,-1,0,0,0,0.9166666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"eventually some f:File | no f & File'",1,1.5625,12,3,0,1,2,-1,-1,0,0,0,0.9166666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"eventually some File - File'",1,1.5625,6,2,0,0,2,5,0,0,1,0,1.8333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv6_oracle,"always Trash in Trash'", , ,5,1,0,0,2,
+inv6,"always Trash in Trash'",30,25.423728813559322,5,1,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f : File | f in Trash => always f in Trash",23,19.491525423728813,15,3,1,1,2,-10,-2,-1,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f:Trash | always f in Trash",18,15.254237288135593,11,2,0,1,2,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always (some Trash implies always Trash in Trash')",13,11.016949152542372,9,2,1,0,3,-4,-1,-1,0,-1,0.5555555555555556,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all t:Trash | always t in Trash",8,6.779661016949152,11,2,0,1,2,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f:File | f in Trash implies after f in Trash",7,5.932203389830509,15,3,1,1,2,-10,-2,-1,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f:File | f in Trash implies after always f in Trash",5,4.23728813559322,16,3,1,1,3,-11,-2,-1,-1,-1,0.3125,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f:Trash | f in Trash'",5,4.23728813559322,11,2,0,1,2,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always (all f:Trash | after f in Trash)",3,2.5423728813559325,11,2,0,1,2,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f: Trash | once f in Trash implies always f in Trash",1,0.847457627118644,16,3,1,1,3,-11,-2,-1,-1,-1,0.3125,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f : Trash | eventually f in Trash implies always f in Trash",1,0.847457627118644,16,3,1,1,3,-11,-2,-1,-1,-1,0.3125,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always all f : File | f in Trash implies f in Trash'",1,0.847457627118644,15,3,1,1,2,-10,-2,-1,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always (all t:Trash | after t in Trash)",1,0.847457627118644,11,2,0,1,2,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always (all f:Trash | f in Trash implies always f in Trash)",1,0.847457627118644,15,3,1,1,2,-10,-2,-1,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"always(all f : (File & Trash) | always (f in Trash))",1,0.847457627118644,13,3,0,1,2,-8,-2,0,-1,0,0.38461538461538464,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"eventually some Protected", , ,3,1,0,0,1,
+inv7,"eventually some Protected",67,69.79166666666666,3,1,0,0,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"eventually some f:File | f in Protected",24,25.0,10,2,0,1,1,-7,-1,0,-1,0,0.3,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"eventually some f:File | eventually f in Protected",2,2.083333333333333,11,2,0,1,2,-8,-1,0,-1,-1,0.2727272727272727,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"eventually some File & Protected",2,2.083333333333333,5,2,0,0,1,-2,-1,0,0,0,0.6,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"eventually some f:File | f not in Protected implies f in Protected",1,1.0416666666666665,14,3,1,1,1,-11,-2,-1,-1,0,0.21428571428571427,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"always (all f:link.File | eventually f in Trash)", , ,13,3,0,1,2,
+inv8,"always all f : File | some f.link => eventually f in Trash",22,39.285714285714285,16,4,1,1,2,-3,-1,-1,0,0,0.8125,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"always all f: link.File | eventually f in Trash",18,32.142857142857146,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"always (all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)",5,8.928571428571429,18,4,1,1,2,-5,-1,-1,0,0,0.7222222222222222,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"always all f,g: File| f->g in link implies eventually f in Trash",4,7.142857142857142,18,4,1,1,2,-5,-1,-1,0,0,0.7222222222222222,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"always all f:File| f in link.File implies eventually f in Trash",3,5.357142857142857,17,4,1,1,2,-4,-1,-1,0,0,0.7647058823529411,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"always all l : link.File | eventually l in Trash",2,3.571428571428571,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"always all a,b:File | a->b in link implies eventually a in Trash",2,3.571428571428571,18,4,1,1,2,-5,-1,-1,0,0,0.7222222222222222,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv9_oracle,"always no Protected & Trash", , ,5,2,0,0,1,
+inv9,"always no Protected & Trash",44,50.0,5,2,0,0,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"always all f:Protected | f not in Trash",17,19.318181818181817,10,2,0,1,1,-5,0,0,-1,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"always all f:File | f in Protected implies f not in Trash",14,15.909090909090908,14,3,1,1,1,-9,-1,-1,-1,0,0.35714285714285715,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"always all p:Protected | p not in Trash",7,7.954545454545454,10,2,0,1,1,-5,0,0,-1,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"always (all p:Protected | no p&Trash)",3,3.4090909090909087,11,3,0,1,1,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"always no Trash & Protected",1,1.1363636363636365,5,2,0,0,1,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"always Protected in File-Trash",1,1.1363636363636365,6,2,0,0,1,-1,0,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv9,"always (Trash-Protected) = Trash",1,1.1363636363636365,6,2,0,0,1,-1,0,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv10_oracle,"always Protected = Protected'", , ,5,1,0,0,2,
+inv10,"always Protected'=Protected",25,47.16981132075472,5,1,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always Protected = Protected'",23,43.39622641509434,5,1,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always all p: Protected | historically p in Protected and always p in Protected",5,9.433962264150944,16,3,1,1,3,-11,-2,-1,-1,-1,0.3125,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv11_oracle,"always File-Protected in Protected'", , ,7,2,0,0,2,
+inv11,"always all f:File | f not in Protected implies after f in Protected",18,22.22222222222222,15,3,1,1,2,-8,-1,-1,-1,0,0.4666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always all f:File | f not in Protected implies f in Protected'",17,20.98765432098765,15,3,1,1,2,-8,-1,-1,-1,0,0.4666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always(all f:File-Protected | after f in Protected)",13,16.049382716049383,13,3,0,1,2,-6,-1,0,-1,0,0.5384615384615384,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always File - Protected in Protected'",12,14.814814814814813,7,2,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always all f:File | f in File-Protected implies after f in Protected",8,9.876543209876543,17,4,1,1,2,-10,-2,-1,-1,0,0.4117647058823529,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always (some (File - Protected) implies ((File - Protected) in Protected'))",6,7.4074074074074066,12,4,1,0,2,-5,-2,-1,0,0,0.5833333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always all f:(File-Protected)|  f in Protected'",6,7.4074074074074066,13,3,0,1,2,-6,-1,0,-1,0,0.5384615384615384,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"always(all a : File - (File & Protected) |  after (a in Protected))",1,1.2345679012345678,15,4,0,1,2,-8,-2,0,-1,0,0.4666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv12_oracle,"eventually some f : File | always f in Trash", , ,11,2,0,1,2,
+inv12,"eventually some f:File | eventually always f in Trash",11,30.555555555555557,12,2,0,1,3,-1,0,0,0,-1,0.9166666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"eventually some f: Trash | always f in Trash",7,19.444444444444446,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"eventually some f:File | always f in Trash",6,16.666666666666664,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"eventually some f: File | f in Trash and always f in Trash",6,16.666666666666664,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"eventually some f:File | f in Trash releases always f in Trash",5,13.88888888888889,15,3,0,1,3,-4,-1,0,0,-1,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"eventually some f: File |  f in Trash and after always f in Trash",1,2.7777777777777777,16,3,1,1,3,-5,-1,-1,0,-1,0.6875,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv13_oracle,"always (all f:Trash | once f not in Trash)", , ,11,2,0,1,2,
+inv13,"all f : File | f in Trash => once f not in Trash",20,24.691358024691358,14,3,1,1,1,-3,-1,-1,0,1,0.7857142857142857,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"always all f:Trash | once f not in Trash",15,18.51851851851852,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"always all f:File | f in Trash implies once f not in Trash",13,16.049382716049383,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all t: Trash | once t not in Trash",6,7.4074074074074066,10,2,0,1,1,1,0,0,0,1,1.1,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"once all f:File | f in Trash implies f not in Trash",4,4.938271604938271,14,3,1,1,1,-3,-1,-1,0,1,0.7857142857142857,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f:File | f in Trash since f not in Trash",4,4.938271604938271,13,3,0,1,1,-2,-1,0,0,1,0.8461538461538461,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f:Trash | once f not in Trash",4,4.938271604938271,10,2,0,1,1,1,0,0,0,1,1.1,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"always all t: Trash | once t not in Trash",3,3.7037037037037033,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f : File | eventually f in Trash => once f not in Trash",3,3.7037037037037033,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f : File | f in Trash implies historically f not in Trash",2,2.4691358024691357,14,3,1,1,1,-3,-1,-1,0,1,0.7857142857142857,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f : (File&Trash) | once f not in Trash",2,2.4691358024691357,12,3,0,1,1,-1,-1,0,0,1,0.9166666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all t : Trash | once t in File - Trash",1,1.2345679012345678,12,3,0,1,1,-1,-1,0,0,1,0.9166666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f:File |  (f in Trash) implies historically once (f not in Trash)",1,1.2345679012345678,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f:File | f in Trash implies once f in File-Trash",1,1.2345679012345678,16,4,1,1,1,-5,-2,-1,0,1,0.6875,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"always all f: File | always (f in Trash implies once f not in Trash)",1,1.2345679012345678,16,3,1,1,3,-5,-1,-1,0,-1,0.6875,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all f: File | always (f in Trash implies once f not in Trash)",1,1.2345679012345678,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv14_oracle,"always (all f:Trash&Protected | f not in Protected')", , ,13,3,0,1,2,
+inv14,"always(all f:Trash&Protected | after f not in Protected)",8,12.121212121212121,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f:Protected | f in Trash implies after f not in Protected",7,10.606060606060606,15,3,1,1,2,-2,0,-1,0,0,0.8666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f:File | f in Trash and f in Protected implies f not in Protected'",7,10.606060606060606,19,4,2,1,2,-6,-1,-2,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f:Protected | f in Trash implies f not in Protected'",7,10.606060606060606,15,3,1,1,2,-2,0,-1,0,0,0.8666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all p:Protected | p in Trash implies after p not in Protected",6,9.090909090909092,15,3,1,1,2,-2,0,-1,0,0,0.8666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f : Protected & Trash | f not in Protected'",6,9.090909090909092,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f:File | (f in Protected & Trash) implies f not in Protected'",4,6.0606060606060606,17,4,1,1,2,-4,-1,-1,0,0,0.7647058823529411,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always (all f:File | f in Trash and f in Protected implies after f not in Protected)",3,4.545454545454546,19,4,2,1,2,-6,-1,-2,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all p: (Protected & Trash) | after p not in Protected",2,3.0303030303030303,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f:File | f in Trash and f in Protected implies f in Trash and f not in Protected'",2,3.0303030303030303,23,5,3,1,2,-10,-2,-3,0,0,0.5652173913043478,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always (all f:File | f in Protected&Trash implies after (f not in Protected))",2,3.0303030303030303,17,4,1,1,2,-4,-1,-1,0,0,0.7647058823529411,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always no Protected & Trash & Protected'",2,3.0303030303030303,8,3,0,0,2,5,0,0,1,0,1.625,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f : File | f in Trash & Protected implies f not in Protected'",2,3.0303030303030303,17,4,1,1,2,-4,-1,-1,0,0,0.7647058823529411,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all t: Trash & Protected | after t not in Protected",2,3.0303030303030303,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all pt : Protected & Trash | after pt not in Protected",1,1.5151515151515151,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always(all f : (Trash & Protected) | after no(f & Protected))",1,1.5151515151515151,14,4,0,1,2,-1,-1,0,0,0,0.9285714285714286,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always (all f:Protected |  some (f & Trash) implies no (Protected' & f) )",1,1.5151515151515151,17,5,1,1,2,-4,-2,-1,0,0,0.7647058823529411,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f : Trash & Protected | f not in Protected'",1,1.5151515151515151,13,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f:File | f in Protected and f in Trash implies f not in Protected'",1,1.5151515151515151,19,4,2,1,2,-6,-1,-2,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"always all f:Trash | f in Protected implies f not in Protected'",1,1.5151515151515151,15,3,1,1,2,-2,0,-1,0,0,0.8666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv15_oracle,"always (all f:File | eventually f in Trash)", , ,11,2,0,1,2,
+inv15,"always all f:File | eventually f in Trash",48,97.95918367346938,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv15,"always(all f : (File - Trash) | eventually f in Trash)",1,2.0408163265306123,13,3,0,1,2,-2,-1,0,0,0,0.8461538461538461,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv16_oracle,"always (all f:Protected | historically f in Protected)", , ,11,2,0,1,2,
+inv16,"always all f:Protected | historically f in Protected",17,34.0,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv16,"always all p:Protected | historically p in Protected",15,30.0,11,2,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv16,"always all f:File| f in Protected implies historically f in Protected",15,30.0,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv16,"always (all f:File | f in Protected implies  (historically some (f &   Protected)))",1,2.0,16,4,1,1,2,-5,-2,-1,0,0,0.6875,0,0,0,0,0,0,0,0,0,0,0,0
+inv16,"always(all f : (File & Protected) | historically (f in Protected))",1,2.0,13,3,0,1,2,-2,-1,0,0,0,0.8461538461538461,0,0,0,0,0,0,0,0,0,0,0,0
+inv16,"always all f : Protected | f in Protected implies historically f in Protected",1,2.0,15,3,1,1,2,-4,-1,-1,0,0,0.7333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv17_oracle,"always (no Trash&File')", , ,6,2,0,0,2,
+inv17,"always all f:File | f in Trash implies after f not in File",9,19.148936170212767,15,3,1,1,2,-9,-1,-1,-1,0,0.4,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always all f : Trash | after f not in File",8,17.02127659574468,11,2,0,1,2,-5,0,0,-1,0,0.5454545454545454,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always all f:Trash | f not in File'",7,14.893617021276595,11,2,0,1,2,-5,0,0,-1,0,0.5454545454545454,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always all f : File | f in Trash => f not in File'",5,10.638297872340425,15,3,1,1,2,-9,-1,-1,-1,0,0.4,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always all t : Trash | t not in File'",5,10.638297872340425,11,2,0,1,2,-5,0,0,-1,0,0.5454545454545454,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always all t: Trash | after t not in File",5,10.638297872340425,11,2,0,1,2,-5,0,0,-1,0,0.5454545454545454,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always (all f:Trash | after no File&f)",2,4.25531914893617,12,3,0,1,2,-6,-1,0,-1,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always ( all f : (File & Trash) | after f not in File)",2,4.25531914893617,13,3,0,1,2,-7,-1,0,-1,0,0.46153846153846156,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always (all f : File | f in Trash implies after File = File - f)",1,2.127659574468085,17,4,1,1,2,-11,-2,-1,-1,0,0.35294117647058826,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always no Trash & File'",1,2.127659574468085,6,2,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always no File' & File & Trash",1,2.127659574468085,8,3,0,0,2,-2,-1,0,0,0,0.75,0,0,0,0,0,0,0,0,0,0,0,0
+inv17,"always (all f : File | before f in Trash implies File = File - f)",1,2.127659574468085,17,4,1,1,2,-11,-2,-1,-1,0,0.35294117647058826,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv18_oracle,"always all f : Protected | f in Trash releases f in Protected", , ,14,3,0,1,2,
+inv18,"always all f: Protected | f in Trash releases f in Protected",14,31.11111111111111,14,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv18,"always all f : Protected | f not in Protected' => f in Trash",9,20.0,15,3,1,1,2,-1,0,-1,0,0,0.9333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv18,"always all p: Protected | after p not in Protected implies p in Trash",8,17.77777777777778,15,3,1,1,2,-1,0,-1,0,0,0.9333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv18,"always all p:Protected | p not in Protected' implies p in Trash",7,15.555555555555555,15,3,1,1,2,-1,0,-1,0,0,0.9333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv18,"always all f : Protected | after f not in Protected => f in Trash",4,8.88888888888889,15,3,1,1,2,-1,0,-1,0,0,0.9333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv18,"always (all f:File | f in Protected implies f in Trash releases f in Protected)",3,6.666666666666667,18,4,1,1,2,-4,-1,-1,0,0,0.7777777777777778,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv19_oracle,"always all f : Protected | f in Protected until f in Trash", , ,14,3,0,1,2,
+inv19,"always all f:Protected | f in Protected until f in Trash",23,52.27272727272727,14,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv19,"always all p:Protected | p in Protected until p in Trash",19,43.18181818181818,14,3,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv19,"always (all f:File | f in Protected implies f in Protected until f in Trash)",2,4.545454545454546,18,4,1,1,2,-4,-1,-1,0,0,0.7777777777777778,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv20_oracle,"always (all f:Trash | not (f not in Trash triggered f in Protected))", , ,15,4,0,1,2,
+inv20,"always all f:Trash | f in Trash since f not in Protected",35,66.0377358490566,14,3,0,1,2,1,1,0,0,0,1.0714285714285714,0,0,0,0,0,0,0,0,0,0,0,0
+inv20,"always all t: Trash | t in Trash since t not in Protected",14,26.41509433962264,14,3,0,1,2,1,1,0,0,0,1.0714285714285714,0,0,0,0,0,0,0,0,0,0,0,0
+inv20,"always (all f:File | f in Trash implies f in Trash since f not in Protected)",2,3.7735849056603774,18,4,1,1,2,-3,0,-1,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv20,"always (all f:Trash | f in Trash  since  no (f & Protected) )",1,1.8867924528301887,15,4,0,1,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv20,"always all p : Trash | p in Trash since p not in Protected",1,1.8867924528301887,14,3,0,1,2,1,1,0,0,0,1.0714285714285714,0,0,0,0,0,0,0,0,0,0,0,0
+
